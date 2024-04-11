@@ -14,7 +14,7 @@ timezone: America/Sao_Paulo
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Projeck Yoshiro # the main title
+title: Projekt Yoshiro # the main title
 
 tagline: Um blog pessoal de cibersegurança. # it will display as the sub-title
 
@@ -72,7 +72,7 @@ theme_mode: dark
 # will be added to all image (site avatar & posts' images) paths starting with '/'
 #
 # e.g. 'https://cdn.com'
-img_cdn:
+img_cdn: 
 
 # the avatar on sidebar, support local or CORS resources
 avatar: https://i.imgur.com/5c154Kc.jpeg
