@@ -381,7 +381,7 @@ span {
 
 }
 
-@media (max-width:1285px){
+@media (min-width:1285px){
     html {
         font-size: 55%;
     }
@@ -393,20 +393,9 @@ span {
     }
 }
 
-@media (max-width:991px){
-    header {
-        padding: 2rem 3%;
-    }
-    section {
-        padding: 10rem 3% 2rem;
-    }
+@media (min-width: 320px) and (max-width: 1024px){
     
-    .contact-info {
-        flex: column;
-    }
-}
-
-@media (max-width:895px){
+    
     #menu-icon{
         display: block;
     }
