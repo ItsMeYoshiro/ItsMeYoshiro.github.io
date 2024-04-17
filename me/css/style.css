@@ -383,14 +383,9 @@ span {
 
 @media (min-width:1285px){
     html {
-        font-size: 55%;
+        font-size: 80%;
     }
-    .projects-box {
-        grid-template-columns: repeat(2,1fr);
-    }
-    .projects-box img {
-        min-width: 3vw;
-    }
+    
 }
 
 @media (min-width: 320px) and (max-width: 1024px){

@@ -92,7 +92,7 @@ Finished
 
 Com a existência do diretório ```/uploads```, poderemos utiliza-lo como gatilho para o Powny Shell. Você pode verificar mais informações em ```https://github.com/flozz/p0wny-shell/blob/master/shell.php```.
 
-#Exploração da vulnerabilidade
+## Exploração da vulnerabilidade
 
 Em primeiro caso, o sistema não estava aceitando enviar o Shell por ele estar em formato .php. Mas com uma simples alteração de formato para .phar, foi possível enviar o shell. 
 
@@ -216,7 +216,7 @@ Microsoft Windows [Version 10.0.17763.4974]
 C:\Users\drbrown.HOSPITAL\Documents>
 ```
 
-#User Flag
+## User Flag
 
 Para encontrar a user flag, basta navegar até o Desktop do drbrown.
 ```
@@ -226,7 +226,7 @@ type user.txt
 7f785f1abc*******fbc61fd9502c6c9c
 ```
 
-#Root Flag
+## Root Flag
 
 Procurando pelo ghostscript, foi possível descobrir a senha do Rpcclient.
 
