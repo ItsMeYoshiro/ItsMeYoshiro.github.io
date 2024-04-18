@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Projekt Yoshiro</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-04-11T17:02:32-03:00</updated>
+  <updated>2024-04-18T09:43:33-03:00</updated>
   <author>
     <name>Yoshiro</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,49 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>HTB Sherlocks - Meerkat</title>
+    <link href="http://localhost:4000/posts/HTB-Meerkat/" rel="alternate" type="text/html" title="HTB Sherlocks - Meerkat" />
+    <published>2024-04-18T03:47:12-03:00</published>
+  
+    <updated>2024-04-18T03:47:12-03:00</updated>
+  
+    <id>http://localhost:4000/posts/HTB-Meerkat/</id>
+    <content src="http://localhost:4000/posts/HTB-Meerkat/" />
+    <author>
+      <name>Yoshiro</name>
+    </author>
+
+  
+    
+    <category term="HTB" />
+    
+    <category term="Sherlocks" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Meerkat
+
+Task 1
+Acreditamos que o servidor da nossa Plataforma de Gestão Empresarial foi comprometido. Você pode confirmar o nome do aplicativo em execução?
+
+Antes de tudo, é possível observar que o host local é o 172.31.6.44 e que, está recebendo muito tráfego vindo dos IP’s 54.144.148.213, 156.146.62.213, 138.199.59.221 e 95.181.232.30.
+
+Aplicando um filtro de tcp para a porta 8080 e para o h...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -63,7 +106,7 @@ Primeiramente, iremos iniciar com o NMAP que é uma ferramenta desenvolvida para
     <link href="http://localhost:4000/posts/HTB-Hospital/" rel="alternate" type="text/html" title="HTB Máquinas - Hospital" />
     <published>2024-04-11T08:47:12-03:00</published>
   
-    <updated>2024-04-11T08:47:12-03:00</updated>
+    <updated>2024-04-17T16:39:59-03:00</updated>
   
     <id>http://localhost:4000/posts/HTB-Hospital/</id>
     <content src="http://localhost:4000/posts/HTB-Hospital/" />

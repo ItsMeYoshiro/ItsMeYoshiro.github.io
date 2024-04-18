@@ -42,7 +42,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="HTB Máquinas - Hospital" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-04-11T08:47:12-03:00","datePublished":"2024-04-11T08:47:12-03:00","description":"Hospital","headline":"HTB Máquinas - Hospital","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/HTB-Hospital/"},"url":"http://localhost:4000/posts/HTB-Hospital/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-04-17T16:39:59-03:00","datePublished":"2024-04-11T08:47:12-03:00","description":"Hospital","headline":"HTB Máquinas - Hospital","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/HTB-Hospital/"},"url":"http://localhost:4000/posts/HTB-Hospital/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -947,6 +947,39 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -1004,6 +1037,29 @@
       </span>
 
       <!-- lastmod date -->
+      
+        <span>
+          Updated
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1713382799"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  Apr 17, 2024
+</time>
+
+        </span>
       
 
       
@@ -1203,7 +1259,7 @@ Finished
 
 <p>Com a existência do diretório <code class="language-plaintext highlighter-rouge">/uploads</code>, poderemos utiliza-lo como gatilho para o Powny Shell. Você pode verificar mais informações em <code class="language-plaintext highlighter-rouge">https://github.com/flozz/p0wny-shell/blob/master/shell.php</code>.</p>
 
-<p>#Exploração da vulnerabilidade</p>
+<h2 id="exploração-da-vulnerabilidade"><span class="me-2">Exploração da vulnerabilidade</span><a href="#exploração-da-vulnerabilidade" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>Em primeiro caso, o sistema não estava aceitando enviar o Shell por ele estar em formato .php. Mas com uma simples alteração de formato para .phar, foi possível enviar o shell.</p>
 
@@ -1381,7 +1437,7 @@ Microsoft Windows [Version 10.0.17763.4974]
 C:\Users\drbrown.HOSPITAL\Documents&gt;
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>#User Flag</p>
+<h2 id="user-flag"><span class="me-2">User Flag</span><a href="#user-flag" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>Para encontrar a user flag, basta navegar até o Desktop do drbrown.</p>
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
@@ -1396,7 +1452,7 @@ type user.txt
 7f785f1abc*******fbc61fd9502c6c9c
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>#Root Flag</p>
+<h2 id="root-flag"><span class="me-2">Root Flag</span><a href="#root-flag" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>Procurando pelo ghostscript, foi possível descobrir a senha do Rpcclient.</p>
 
@@ -1608,7 +1664,7 @@ index: 0x2077 RID: 0x469 acb: 0x00020011 Account: SM_e5b6f3aed4da4ac98	Name: Mic
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/HTB-Devvortex/">HTB Máquinas - Devvortex</a>
+          <a href="/posts/HTB-Meerkat/">HTB Sherlocks - Meerkat</a>
         </li>
       
         
@@ -1616,6 +1672,13 @@ index: 0x2077 RID: 0x469 acb: 0x00020011 Account: SM_e5b6f3aed4da4ac98	Name: Mic
         
         <li class="text-truncate lh-lg">
           <a href="/posts/HTB-Hospital/">HTB Máquinas - Hospital</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/HTB-Devvortex/">HTB Máquinas - Devvortex</a>
         </li>
       
     </ul>
@@ -1653,7 +1716,24 @@ index: 0x2077 RID: 0x469 acb: 0x00020011 Account: SM_e5b6f3aed4da4ac98	Name: Mic
     
     
     
+  
+    
+    
+    
+    
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -1675,6 +1755,9 @@ index: 0x2077 RID: 0x469 acb: 0x00020011 Account: SM_e5b6f3aed4da4ac98	Name: Mic
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/m%C3%A1quinas/">máquinas</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/sherlocks/">sherlocks</a>
       
     </div>
   </section>
@@ -1741,6 +1824,18 @@ index: 0x2077 RID: 0x469 acb: 0x00020011 Account: SM_e5b6f3aed4da4ac98	Name: Mic
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
 
 
@@ -1789,6 +1884,47 @@ index: 0x2077 RID: 0x469 acb: 0x00020011 Account: SM_e5b6f3aed4da4ac98	Name: Mic
 
 Enumeração
 Primeiramente, iremos iniciar com o NMAP que é uma ferramenta desenvolvida para realizar varreduras de portas e mapear dispositivos conectados a uma rede, o Nmap é uma poderos...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/HTB-Meerkat/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1713422832"
+  data-df="ll"
+  
+>
+  Apr 18, 2024
+</time>
+
+              <h4 class="pt-0 my-2">HTB Sherlocks - Meerkat</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  Meerkat
+
+Task 1
+Acreditamos que o servidor da nossa Plataforma de Gestão Empresarial foi comprometido. Você pode confirmar o nome do aplicativo em execução?
+
+Antes de tudo, é possível observar que ...
                 </p>
               </div>
             </div>
@@ -1899,7 +2035,24 @@ Primeiramente, iremos iniciar com o NMAP que é uma ferramenta desenvolvida para
     
     
     
+  
+    
+    
+    
+    
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -1921,6 +2074,9 @@ Primeiramente, iremos iniciar com o NMAP que é uma ferramenta desenvolvida para
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/m%C3%A1quinas/">máquinas</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/sherlocks/">sherlocks</a>
       
     </div>
   </section>
