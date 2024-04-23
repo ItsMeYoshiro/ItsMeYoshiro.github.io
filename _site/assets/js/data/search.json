@@ -1,6 +1,23 @@
 [
   
   {
+    "title": "HTB Máquinas - Runner",
+    "url": "/posts/HTB-Runner/",
+    "categories": "HTB, Máquinas",
+    "tags": "máquinas, htb",
+    "date": "2024-04-23 07:30:12 -0300",
+    
+
+
+
+
+
+    
+    "snippet": "RunnerEnumeraçãoNmap:──(yoshiro㉿kali)-[~/htb/runner]└─$ nmap 10.10.11.13 -A -sV -sCStarting Nmap 7.94SVN ( https://nmap.org ) at 2024-04-22 13:48 -03Nmap scan report for runner.htb (10.10.11.13)Hos...",
+    "content": "RunnerEnumeraçãoNmap:──(yoshiro㉿kali)-[~/htb/runner]└─$ nmap 10.10.11.13 -A -sV -sCStarting Nmap 7.94SVN ( https://nmap.org ) at 2024-04-22 13:48 -03Nmap scan report for runner.htb (10.10.11.13)Host is up (0.34s latency).Not shown: 997 closed tcp ports (conn-refused)PORT     STATE SERVICE     VERSION22/tcp   open  ssh         OpenSSH 8.9p1 Ubuntu 3ubuntu0.6 (Ubuntu Linux; protocol 2.0)| ssh-hostkey: |   256 3e:ea:45:4b:c5:d1:6d:6f:e2:d4:d1:3b:0a:3d:a9:4f (ECDSA)|_  256 64:cc:75:de:4a:e6:a5:b4:73:eb:3f:1b:cf:b4:e3:94 (ED25519)80/tcp   open  http        nginx 1.18.0 (Ubuntu)|_http-server-header: nginx/1.18.0 (Ubuntu)|_http-title: Runner - CI/CD Specialists8000/tcp open  nagios-nsca Nagios NSCA|_http-title: Site doesn't have a title (text/plain; charset=utf-8).Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernelService detection performed. Please report any incorrect results at https://nmap.org/submit/ .Nmap done: 1 IP address (1 host up) scanned in 74.03 secondsJogando o IP no navegador, somos direcionados para um site que apresenta desenvolvedores especialiados em CI/CD. Esse site em sí, não oferece oportunidades para um ataque, então procurei por subdomínios. Utilizei uma wordlist própria em que contém palavras chaves relacionadas ao desenvolvimento CI/CD e, junto com o vhost, foi possível encontrar o dominio teamcity.runner.htb.Abaixo do login, é possível identificar a versão do TeamCity, sendo a  Version 2023.05.3 (build 129390). Pesquisando sobre, essa versão é vulneránel ao CVE-2023-42793.Explorando a vulnerabilidadeUtilizando o script, é possível gerar um login para acesso a plataforma.Após acessar, é possível identificar que a plataforma possuí backups, e nesses backups, é possível identificar uma chave de acesso.Também é possível identificar alguns usuários na plataforma do TeamCity, levando a considerar que a chave de acesso é referente ao usuário matthew ou John.User FlagConsegui acesso ao usuário John pelo SSh e consegui a flag user.Verificando mais afundo, é possível identificar que existe outro domínio sobre o sistema, o portainer-administration.runner.htb.Procurando por mais informações nos arquivos de backup, é possível encontrar informações sobre as senhas criptografadas dos usuários do sistema.Utilizando o hashcat, é possível descriptografar a senha do matthew.Root flagUtilizando as credenciais do matthew, é possível acessar a plataforma de dockers do runners.htb.Vamos criar um container para que seja possível realizar comandos via command bash. Primeiramente, criaremos um volume com as seguinte configurações:Depois, iremos criar um container com as seguintes configurações:Depois disso, iremos iniciar o container e iniciar um command bash e conseguir o acesso root."
+  },
+  
+  {
     "title": "HTB Sherlocks - Meerkat",
     "url": "/posts/HTB-Meerkat/",
     "categories": "HTB, Sherlocks",
