@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Projekt Yoshiro</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-05-06T10:48:13-03:00</updated>
+  <updated>2024-07-28T23:41:06-03:00</updated>
   <author>
     <name>Yoshiro</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,43 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Prova de estágio Tempest</title>
+    <link href="http://localhost:4000/posts/Prova-Tempest/" rel="alternate" type="text/html" title="Prova de estágio Tempest" />
+    <published>2024-06-28T18:02:12-03:00</published>
+  
+    <updated>2024-06-28T18:02:12-03:00</updated>
+  
+    <id>http://localhost:4000/posts/Prova-Tempest/</id>
+    <content src="http://localhost:4000/posts/Prova-Tempest/" />
+    <author>
+      <name>Yoshiro</name>
+    </author>
+
+  
+    
+    <category term="Tempest" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Prova de estágio Tempest
+
+Contexto
+A prova de estágio da Tempest ocorreu até o dia 28/07 e uma das partes dela era necessário resolver um “mini CTF”, em que, uma empresa denominada Quantum Nexys sofreu um ataque de Ransomware e procurou um time especializado para tentar reaver os dados de contratos, clientes e parceiros que foram roubados de seu servidor principal. Mas um arquivo em específico,...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -195,45 +232,6 @@ Acreditamos que o servidor da nossa Plataforma de Gestão Empresarial foi compro
 Antes de tudo, é possível observar que o host local é o 172.31.6.44 e que, está recebendo muito tráfego vindo dos IP’s 54.144.148.213, 156.146.62.213, 138.199.59.221 e 95.181.232.30.
 
 Aplicando um filtro de tcp para a porta 8080 e para o h...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>HTB Máquinas - Devvortex</title>
-    <link href="http://localhost:4000/posts/HTB-Devvortex/" rel="alternate" type="text/html" title="HTB Máquinas - Devvortex" />
-    <published>2024-04-11T09:33:12-03:00</published>
-  
-    <updated>2024-04-11T09:33:12-03:00</updated>
-  
-    <id>http://localhost:4000/posts/HTB-Devvortex/</id>
-    <content src="http://localhost:4000/posts/HTB-Devvortex/" />
-    <author>
-      <name>Yoshiro</name>
-    </author>
-
-  
-    
-    <category term="HTB" />
-    
-    <category term="Máquinas" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Devvortex
-
-Enumeração
-Primeiramente, iremos iniciar com o NMAP que é uma ferramenta desenvolvida para realizar varreduras de portas e mapear dispositivos conectados a uma rede, o Nmap é uma poderosa utilidade de linha de comando que fornece informações detalhadas sobre hosts, serviços e sistemas operacionais em uma rede. Seus recursos incluem detecção de dispositivos, varredura de portas, ident...
     </summary>
   
 
