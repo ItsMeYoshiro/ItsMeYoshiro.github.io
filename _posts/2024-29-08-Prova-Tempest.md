@@ -7,6 +7,7 @@ tags: [tempest]     # TAG names should always be lowercase
 # Prova de estágio Tempest
 
 ## Contexto
+
 A prova de estágio da Tempest ocorreu até o dia 28/07 e uma das partes dela era necessário resolver um "mini CTF", em que, uma empresa denominada Quantum Nexys sofreu um ataque de Ransomware e procurou um time especializado para tentar reaver os dados de contratos, clientes e parceiros que foram roubados de seu servidor principal. Mas um arquivo em específico, era referente a uma patente que foi feita recentemente e que não havia backup. Dessa forma, foi apresentado o arquivo dessa patente criptografado em uma mensagem pgp:
 ![](https://i.imgur.com/uYE1qvH.png)
 
@@ -17,15 +18,17 @@ Além disso, também foi apresentado o link de um site em que os criminosos soli
 
 ## Enumeração
 
-Eu havia feito a prova anterior da Tempest, e muitas informações valiosas já estavam disponíveis no código HTML, então, eu pulei as primeiras etapas que seriam: análise de portas abertas e diretórios. 
+Eu havia feito a prova anterior da Tempest, e muitas informações valiosas já estavam disponíveis no código HTML, então, eu pulei as primeiras etapas que seriam: análise de portas abertas e diretórios.
 
 Análisando o código, percebi que havia parte de um código javascript que redirecionava dados para uma API que estava em outro domínio.
 
 Uma tela de login foi apresentada indo até o outro domínio, era o forúm dos criminosos.
-![](https://i.imgur.com/hlQtWbK.png) 
+![](https://i.imgur.com/hlQtWbK.png)
 
-Uma das formas em que os sites utilizam para se proteger de robôs de buscas, é utilizando o robots.txt. Dessa forma, consegui verificar alguns diretórios que estavam a disponíveis nesse forúm analisando o conteúdo desse arquivo.
-![](https://i.imgur.com/ZeApVAM.png)
+Uma das formas em que os sites utilizam para se proteger de robôs de buscas, é utilizando o robots.txt. Dessa forma, consegui verificar alguns diretórios que estavam disponíveis nesse forúm analisando o conteúdo desse arquivo.
+
+
+![img](https://i.imgur.com/ZeApVAM.png)
 
 Analisando logo o primeiro diretório (/api/), encontrei um arquivo .yaml, e este arquivo continha credenciais de um usuário do forúm que havia solicitado a alteração de senha.
 ![](https://i.imgur.com/yxEFrt5.png)
@@ -34,7 +37,7 @@ Com essas credenciais, foi possível acessar o forúm.
 ![](https://i.imgur.com/aflV5iy.png)
 
 Mas, havia um problema. Esse usuário não estava com permissões de vizualização do forúm, apenas de acesso.
- 
+
 Verificando o site via Burp Suit, consegui detectar que os cookies eram enviados em forma de base64 e dessa forma, seria possível realizar alterações que resultariam no envenamento desses cookies.
 ![](https://i.imgur.com/e1mnicM.png)
 
@@ -48,7 +51,7 @@ Alterando manualmente o cookie legítimo para o que foi envenenado, eu consegui 
 
 ![](https://i.imgur.com/jkj8kz6.png)
 
-Nesse mesmo print, é possível identificar a empresa que foi vitíma do Ransoware e nos contatou, e além de outras vitímas do forúm. Mas com esse usuário, não foi possível acessar o tópico do forúm. 
+Nesse mesmo print, é possível identificar a empresa que foi vitíma do Ransoware e nos contatou, e além de outras vitímas do forúm. Mas com esse usuário, não foi possível acessar o tópico do forúm.
 
 ![](https://i.imgur.com/d8woOSe.png)
 
