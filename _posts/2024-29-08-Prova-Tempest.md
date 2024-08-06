@@ -20,26 +20,27 @@ Além disso, também foi apresentado o link de um site em que os criminosos soli
 
 Eu havia feito a prova anterior da Tempest, e muitas informações valiosas já estavam disponíveis no código HTML, então, eu pulei as primeiras etapas que seriam: análise de portas abertas e diretórios.
 
-Análisando o código, percebi que havia parte de um código javascript que redirecionava dados para uma API que estava em outro domínio.
+Análisando o código, percebi no código javascript da página um redirecionamento de dados para uma API que estava em outro domínio.
+
+![img](https://i.imgur.com/RxSyKuF.png)
 
 Uma tela de login foi apresentada indo até o outro domínio, era o forúm dos criminosos.
 ![](https://i.imgur.com/hlQtWbK.png)
 
-Uma das formas em que os sites utilizam para se proteger de robôs de buscas, é utilizando o robots.txt. Dessa forma, consegui verificar alguns diretórios que estavam disponíveis nesse forúm analisando o conteúdo desse arquivo.
-
+Uma das formas em que os sites utilizam para se proteger de robôs de buscas, é utilizando o robots.txt. Dessa forma, consegui verificar alguns diretórios que estavam disponíveis nesse forúm analisando o conteúdo deste arquivo.
 
 ![img](https://i.imgur.com/ZeApVAM.png)
 
-Analisando logo o primeiro diretório (/api/), encontrei um arquivo .yaml, e este arquivo continha credenciais de um usuário do forúm que havia solicitado a alteração de senha.
-![](https://i.imgur.com/yxEFrt5.png)
+Analisando logo o primeiro diretório (/api/), encontrei um arquivo .yaml, e neste arquivo estavam armazenadas as credenciais de um usuário do forúm que havia solicitado a alteração de senha.
+![img](https://i.imgur.com/yxEFrt5.png)
 
 Com essas credenciais, foi possível acessar o forúm.
 ![](https://i.imgur.com/aflV5iy.png)
 
 Mas, havia um problema. Esse usuário não estava com permissões de vizualização do forúm, apenas de acesso.
 
-Verificando o site via Burp Suit, consegui detectar que os cookies eram enviados em forma de base64 e dessa forma, seria possível realizar alterações que resultariam no envenamento desses cookies.
-![](https://i.imgur.com/e1mnicM.png)
+Verificando o site via Burp Suit, consegui detectar que os cookies eram enviados em forma de base64 e, dessa forma, seria possível realizar alterações que resultariam no envenamento desses cookies.
+![img](https://i.imgur.com/e1mnicM.png)
 
 Analisando os cookies, para verificar quais informações eram passadas para que eu conseguisse altera-lo.
 ![](https://i.imgur.com/TuXCOFJ.png)
@@ -51,13 +52,13 @@ Alterando manualmente o cookie legítimo para o que foi envenenado, eu consegui 
 
 ![](https://i.imgur.com/jkj8kz6.png)
 
-Nesse mesmo print, é possível identificar a empresa que foi vitíma do Ransoware e nos contatou, e além de outras vitímas do forúm. Mas com esse usuário, não foi possível acessar o tópico do forúm.
+Nesse mesmo print, é possível identificar a empresa que foi vitíma do Ransoware e que nos contatou, e além de outras vitímas do forúm. Mas com esse usuário, não foi possível acessar o tópico do forúm.
 
 ![](https://i.imgur.com/d8woOSe.png)
 
 ## Escalonamento de privilégio
 
-Dessa forma, é necessário escalonar o nosso privilégio para acessar o tópico e conseguir mais informações a respeito. Navegando pelo forúm é possível encontrar o tópico de membros no menu. Nesse tópico, é listado todos os membros do forúm juntamente com suas funções.
+Dessa forma, será necessário escalonar para um usuário com permissão para acessar o tópico e conseguir mais informações a respeito do ataque. Navegando pelo forúm é possível encontrar o tópico de membros no menu. Nesse tópico, é listado todos os membros do forúm juntamente com suas permissões.
 
 ![](https://i.imgur.com/KzlkDVq.png)
 
