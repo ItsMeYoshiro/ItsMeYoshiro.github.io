@@ -29,7 +29,7 @@
   
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
-<meta name="generator" content="Jekyll v4.3.3" />
+<meta name="generator" content="Jekyll v4.3.4" />
 <meta property="og:title" content="Prova de estágio Tempest" />
 <meta property="og:locale" content="pt" />
 <meta name="description" content="Prova de estágio Tempest" />
@@ -42,7 +42,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Prova de estágio Tempest" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-06-28T18:02:12-03:00","datePublished":"2024-06-28T18:02:12-03:00","description":"Prova de estágio Tempest","headline":"Prova de estágio Tempest","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Prova-Tempest/"},"url":"http://localhost:4000/posts/Prova-Tempest/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-08-05T21:26:56-03:00","datePublished":"2024-06-28T18:02:12-03:00","description":"Prova de estágio Tempest","headline":"Prova de estágio Tempest","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Prova-Tempest/"},"url":"http://localhost:4000/posts/Prova-Tempest/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1856,6 +1856,69 @@
     <!-- combine -->
     
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
 
   
 
@@ -1983,6 +2046,29 @@
 
       <!-- lastmod date -->
       
+        <span>
+          Updated
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1722904016"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  Aug  5, 2024
+</time>
+
+        </span>
+      
 
       
 
@@ -2021,7 +2107,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="751 words"
+  title="756 words"
 >
   <em>4 min</em> read</span>
 
@@ -2035,6 +2121,7 @@
     <h1 id="prova-de-estágio-tempest">Prova de estágio Tempest</h1>
 
 <h2 id="contexto"><span class="me-2">Contexto</span><a href="#contexto" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
 <p>A prova de estágio da Tempest ocorreu até o dia 28/07 e uma das partes dela era necessário resolver um “mini CTF”, em que, uma empresa denominada Quantum Nexys sofreu um ataque de Ransomware e procurou um time especializado para tentar reaver os dados de contratos, clientes e parceiros que foram roubados de seu servidor principal. Mas um arquivo em específico, era referente a uma patente que foi feita recentemente e que não havia backup. Dessa forma, foi apresentado o arquivo dessa patente criptografado em uma mensagem pgp:
 <a href="https://i.imgur.com/uYE1qvH.png" class="popup img-link  shimmer"><img src="https://i.imgur.com/uYE1qvH.png" alt="" loading="lazy"></a></p>
 
@@ -2047,24 +2134,27 @@
 
 <p>Eu havia feito a prova anterior da Tempest, e muitas informações valiosas já estavam disponíveis no código HTML, então, eu pulei as primeiras etapas que seriam: análise de portas abertas e diretórios.</p>
 
-<p>Análisando o código, percebi que havia parte de um código javascript que redirecionava dados para uma API que estava em outro domínio.</p>
+<p>Análisando o código, percebi no código javascript da página um redirecionamento de dados para uma API que estava em outro domínio.</p>
+
+<p><a href="https://i.imgur.com/RxSyKuF.png" class="popup img-link  shimmer"><img src="https://i.imgur.com/RxSyKuF.png" alt="img" loading="lazy"></a></p>
 
 <p>Uma tela de login foi apresentada indo até o outro domínio, era o forúm dos criminosos.
 <a href="https://i.imgur.com/hlQtWbK.png" class="popup img-link  shimmer"><img src="https://i.imgur.com/hlQtWbK.png" alt="" loading="lazy"></a></p>
 
-<p>Uma das formas em que os sites utilizam para se proteger de robôs de buscas, é utilizando o robots.txt. Dessa forma, consegui verificar alguns diretórios que estavam a disponíveis nesse forúm analisando o conteúdo desse arquivo.
-<a href="https://i.imgur.com/ZeApVAM.png" class="popup img-link  shimmer"><img src="https://i.imgur.com/ZeApVAM.png" alt="" loading="lazy"></a></p>
+<p>Uma das formas em que os sites utilizam para se proteger de robôs de buscas, é utilizando o robots.txt. Dessa forma, consegui verificar alguns diretórios que estavam disponíveis nesse forúm analisando o conteúdo deste arquivo.</p>
 
-<p>Analisando logo o primeiro diretório (/api/), encontrei um arquivo .yaml, e este arquivo continha credenciais de um usuário do forúm que havia solicitado a alteração de senha.
-<a href="https://i.imgur.com/yxEFrt5.png" class="popup img-link  shimmer"><img src="https://i.imgur.com/yxEFrt5.png" alt="" loading="lazy"></a></p>
+<p><a href="https://i.imgur.com/ZeApVAM.png" class="popup img-link  shimmer"><img src="https://i.imgur.com/ZeApVAM.png" alt="img" loading="lazy"></a></p>
+
+<p>Analisando logo o primeiro diretório (/api/), encontrei um arquivo .yaml, e neste arquivo estavam armazenadas as credenciais de um usuário do forúm que havia solicitado a alteração de senha.
+<a href="https://i.imgur.com/yxEFrt5.png" class="popup img-link  shimmer"><img src="https://i.imgur.com/yxEFrt5.png" alt="img" loading="lazy"></a></p>
 
 <p>Com essas credenciais, foi possível acessar o forúm.
 <a href="https://i.imgur.com/aflV5iy.png" class="popup img-link  shimmer"><img src="https://i.imgur.com/aflV5iy.png" alt="" loading="lazy"></a></p>
 
 <p>Mas, havia um problema. Esse usuário não estava com permissões de vizualização do forúm, apenas de acesso.</p>
 
-<p>Verificando o site via Burp Suit, consegui detectar que os cookies eram enviados em forma de base64 e dessa forma, seria possível realizar alterações que resultariam no envenamento desses cookies.
-<a href="https://i.imgur.com/e1mnicM.png" class="popup img-link  shimmer"><img src="https://i.imgur.com/e1mnicM.png" alt="" loading="lazy"></a></p>
+<p>Verificando o site via Burp Suit, consegui detectar que os cookies eram enviados em forma de base64 e, dessa forma, seria possível realizar alterações que resultariam no envenamento desses cookies.
+<a href="https://i.imgur.com/e1mnicM.png" class="popup img-link  shimmer"><img src="https://i.imgur.com/e1mnicM.png" alt="img" loading="lazy"></a></p>
 
 <p>Analisando os cookies, para verificar quais informações eram passadas para que eu conseguisse altera-lo.
 <a href="https://i.imgur.com/TuXCOFJ.png" class="popup img-link  shimmer"><img src="https://i.imgur.com/TuXCOFJ.png" alt="" loading="lazy"></a></p>
@@ -2076,13 +2166,13 @@
 
 <p><a href="https://i.imgur.com/jkj8kz6.png" class="popup img-link  shimmer"><img src="https://i.imgur.com/jkj8kz6.png" alt="" loading="lazy"></a></p>
 
-<p>Nesse mesmo print, é possível identificar a empresa que foi vitíma do Ransoware e nos contatou, e além de outras vitímas do forúm. Mas com esse usuário, não foi possível acessar o tópico do forúm.</p>
+<p>Nesse mesmo print, é possível identificar a empresa que foi vitíma do Ransoware e que nos contatou, e além de outras vitímas do forúm. Mas com esse usuário, não foi possível acessar o tópico do forúm.</p>
 
 <p><a href="https://i.imgur.com/d8woOSe.png" class="popup img-link  shimmer"><img src="https://i.imgur.com/d8woOSe.png" alt="" loading="lazy"></a></p>
 
 <h2 id="escalonamento-de-privilégio"><span class="me-2">Escalonamento de privilégio</span><a href="#escalonamento-de-privilégio" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>Dessa forma, é necessário escalonar o nosso privilégio para acessar o tópico e conseguir mais informações a respeito. Navegando pelo forúm é possível encontrar o tópico de membros no menu. Nesse tópico, é listado todos os membros do forúm juntamente com suas funções.</p>
+<p>Dessa forma, será necessário escalonar para um usuário com permissão para acessar o tópico e conseguir mais informações a respeito do ataque. Navegando pelo forúm é possível encontrar o tópico de membros no menu. Nesse tópico, é listado todos os membros do forúm juntamente com suas permissões.</p>
 
 <p><a href="https://i.imgur.com/KzlkDVq.png" class="popup img-link  shimmer"><img src="https://i.imgur.com/KzlkDVq.png" alt="" loading="lazy"></a></p>
 
@@ -2256,6 +2346,13 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/HTB-HeartbreakerContinuum/">HTB Sherlocks - Heartbreaker-Continuum</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/Prova-Tempest/">Prova de estágio Tempest</a>
         </li>
       
@@ -2278,13 +2375,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/posts/HTB-Runner/">HTB Máquinas - Runner</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/HTB-Meerkat/">HTB Sherlocks - Meerkat</a>
         </li>
       
     </ul>
@@ -2364,8 +2454,6 @@
     
     
     
-    
-      
     
   
     
@@ -2478,9 +2566,13 @@
   
 
   
-    <div class="btn btn-outline-primary disabled" aria-label="Newer">
-      <p>-</p>
-    </div>
+    <a
+      href="/posts/HTB-HeartbreakerContinuum/"
+      class="btn btn-outline-primary"
+      aria-label="Newer"
+    >
+      <p>HTB Sherlocks - Heartbreaker-Continuum</p>
+    </a>
   
 </nav>
 
@@ -2600,8 +2692,6 @@
     
     
     
-    
-      
     
   
     
