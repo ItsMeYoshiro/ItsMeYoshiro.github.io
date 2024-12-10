@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Projekt Yoshiro</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-10-25T14:01:40-03:00</updated>
+  <updated>2024-12-10T12:21:51-03:00</updated>
   <author>
     <name>Yoshiro</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,47 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>THM - Chrome</title>
+    <link href="http://localhost:4000/posts/THM-Chrome/" rel="alternate" type="text/html" title="THM - Chrome" />
+    <published>2024-12-09T13:00:12-03:00</published>
+  
+    <updated>2024-12-09T13:00:12-03:00</updated>
+  
+    <id>http://localhost:4000/posts/THM-Chrome/</id>
+    <content src="http://localhost:4000/posts/THM-Chrome/" />
+    <author>
+      <name>Yoshiro</name>
+    </author>
+
+  
+    
+    <category term="THM" />
+    
+    <category term="hard" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Contexto
+Um agente malicioso entrou na rede e extraiu algo, mas a pergunta é: o que exatamente?
+
+Analisando os pacotes.
+
+A princípio, foi disponibilizado um pacote de rede para que seja realizada a análise do mesmo. Utilizando o Wireshark, podemos perceber que, em um primeiro momento, a maioria do tráfego ocorre através do protocolo SMB. O SMB é um protocolo de comunicação que permite o compart...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -181,53 +222,6 @@ Nmap:
 nmap -A -sV -sC 10.10.11.15                                                
 Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-05-01 06:37 -03
 Nmap scan report for 10.1...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>HTB Máquinas - Runner</title>
-    <link href="http://localhost:4000/posts/HTB-Runner/" rel="alternate" type="text/html" title="HTB Máquinas - Runner" />
-    <published>2024-04-23T07:30:12-03:00</published>
-  
-    <updated>2024-04-23T07:30:12-03:00</updated>
-  
-    <id>http://localhost:4000/posts/HTB-Runner/</id>
-    <content src="http://localhost:4000/posts/HTB-Runner/" />
-    <author>
-      <name>Yoshiro</name>
-    </author>
-
-  
-    
-    <category term="HTB" />
-    
-    <category term="Máquinas" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Runner
-
-Enumeração
-Nmap:
-──(yoshiro㉿kali)-[~/htb/runner]
-└─$ nmap 10.10.11.13 -A -sV -sC
-Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-04-22 13:48 -03
-Nmap scan report for runner.htb (10.10.11.13)
-Host is up (0.34s latency).
-Not shown: 997 closed tcp ports (conn-refused)
-PORT     STATE SERVICE     VERSION
-22/tcp   open  ssh         OpenSSH 8.9p1 Ubuntu 3ubuntu0.6 (Ubuntu Linux; protocol 2....
     </summary>
   
 
