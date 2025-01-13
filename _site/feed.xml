@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Projekt Yoshiro</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-12-10T12:21:51-03:00</updated>
+  <updated>2025-01-13T06:11:03-03:00</updated>
   <author>
     <name>Yoshiro</name>
     <uri>http://localhost:4000/</uri>
@@ -13,10 +13,53 @@
   <link rel="alternate" type="text/html" hreflang="pt"
     href="http://localhost:4000/"/>
   <generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator>
-  <rights> © 2024 Yoshiro </rights>
+  <rights> © 2025 Yoshiro </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Prova de estágio Tempest 2</title>
+    <link href="http://localhost:4000/posts/Tempest-Prova-de-Est%C3%A1gio-2/" rel="alternate" type="text/html" title="Prova de estágio Tempest 2" />
+    <published>2025-01-13T01:00:12-03:00</published>
+  
+    <updated>2025-01-13T01:00:12-03:00</updated>
+  
+    <id>http://localhost:4000/posts/Tempest-Prova-de-Est%C3%A1gio-2/</id>
+    <content src="http://localhost:4000/posts/Tempest-Prova-de-Est%C3%A1gio-2/" />
+    <author>
+      <name>Yoshiro</name>
+    </author>
+
+  
+    
+    <category term="Tempest" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Contexto
+A prova de estágio da Tempest ocorreu até o dia 08/01/2025 até 13/01/2025 e uma das etapas da prova, foi necessário ajudar uma empresa em que havia sido alvo de hackativitas.
+
+Foi fornecido o link do site da empresa. Ao acessá-lo, uma mensagem deixada pelos atacantes estava visível:
+
+
+Analisando o código-fonte do site, foi encontrada uma assinatura dos atacantes no arquivo js:
+
+
+Pesqui...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -178,50 +221,6 @@ Not shown: 990 filtered tcp ports (no-response)
 PORT    STATE SERVICE       VERSION
 25/tcp  open  smtp          hMailServer smtpd
 | smtp-commands: mailing.htb, SIZE 20480000, AUTH ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>HTB Máquinas - Intuition</title>
-    <link href="http://localhost:4000/posts/HTB-Intuition/" rel="alternate" type="text/html" title="HTB Máquinas - Intuition" />
-    <published>2024-05-01T03:30:12-03:00</published>
-  
-    <updated>2024-05-01T03:30:12-03:00</updated>
-  
-    <id>http://localhost:4000/posts/HTB-Intuition/</id>
-    <content src="http://localhost:4000/posts/HTB-Intuition/" />
-    <author>
-      <name>Yoshiro</name>
-    </author>
-
-  
-    
-    <category term="HTB" />
-    
-    <category term="Máquinas" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Intuition
-
-De antemão, peço desculpas por não fazer um post mais detalhado. Estou terminando as demandas da faculdade e estou correndo contra o relógio. Mas qualquer dúvida vocẽs podem entrar em contato comigo!
-
-Enumeração
-Nmap:
-nmap -A -sV -sC 10.10.11.15                                                
-Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-05-01 06:37 -03
-Nmap scan report for 10.1...
     </summary>
   
 
