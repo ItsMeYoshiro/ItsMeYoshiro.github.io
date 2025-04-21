@@ -1,97 +1,204 @@
 <!DOCTYPE html>
-<html>
-    
-    <head>
-        <title>the quieter you become...</title>
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <link rel="shortcut icon" href="img/icon.jpg">
+<html lang="en">
 
-    </head>
-    <body> 
-        <header class="header">
-            <a href="#home" class="logo">
-                Kaio / <spa>Yoshiro</spa>
-            </a>
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Kaio Barbosa | CyberSec</title>
+      <link rel="shortcut icon" type="imagex/png" href="images/BlueTeam.png">
+      <link rel="stylesheet" href="style.css">
+      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-            <i class="bx bx-menu" id="menu-icon"></i>
-            <nav class="navbar">
-                <a href="#home" class="active">Inicio</a>
-                <a href="#projects">Projetos</a>
-                <a href="#contact" >Contato</a>
-            </nav>
-        </header>
+</head>
 
-        <section class="home" id="home">
-
-            <div class="home-content">
-                <h1>Olá, me chamo <span>Kaio</span></h1>
-                <h3 class="text-animation">
-                    e sou um <span></span>
-                </h3>
-                <p>
-                    Apaixonado por tecnologia desde pequeno, sempre buscando aprender mais e mais sobre o mundo da programação e cibersegurança.
-                </p>
-
-                <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/kaiobarbosa/">
-                        <i class="bx bxl-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/ItsMeYoshiro">
-                        <i class="bx bxl-github"></i>
-                    </a>
-                </div>
-                <div class="btn-group">
-                    <a href="https://itsmeyoshiro.github.io/" class="btn"> Blog </a>
-                    <a href="#contact" class="btn"> Contato </a>
-                </div>
+<body>
+      <div class="container">
+            <video class="back-vid" loop autoplay muted plays-inline src="videos/galaxy.mp4" type="video/mp4"> </video>
+            <header>
+                  <div class="left">
+                        <img src="" alt="">
+                        <h1><span style="color: #72a1de;">Kaio </span>Barbosa</h1>
+                  </div>
+                  <ul>
+                        <li><a href="#about">Sobre</a></li>
+                        <li><a href="#projects">Projetos</a></li>
+                        <li><a href="#habilids">Habilidades</a></li>
+                  </ul>
+                  <div class="box-icons">
+                        <a href=""><i class='bx bxl-blogger'></i></a>
+                        <a href="https://www.linkedin.com/in/kaiobarbosa/"><i class='bx bxl-linkedin-square'></i></a>
+                        <a href="https://github.com/ItsMeYoshiro"><i class='bx bxl-github'></i></a>
+                  </div>
+                  <div class="menu-icon">
+                        <i class='bx bx-menu'></i>
+                  </div>
+            </header>
+            <div class="sidebar">
+                  <div class="close-icon">
+                        <i class='bx bx-x'></i>
+                  </div>
+                  <ul>
+                        <li><a href="">Início</a></li>
+                        <li><a href="">Sobre</a></li>
+                        <li><a href="">Habilidades</a></li>
+                        <li><a href="">Projetos</a></li>
+                        <li><a href="">Contato</a></li>
+                  </ul>
+                  <div class="social-icons">
+                        <a href=""><i class='bx bxl-youtube'></i></a>
+                        <a href=""><i class='bx bxl-linkedin-square'></i></a>
+                        <a href=""><i class='bx bxl-github'></i></a>
+                  </div>
             </div>
-            <div class="home-img">
-                    <img src="img/icon.jpg" alt="">
-            </div>
-        </section>
-        
-        <section class="projects" id="projects">
-            <h2 class="heading">Projetos</h2>
+            <div class="blackhole-box">
+                  <video src="videos/blackhole.mp4" type="video/mp4"></video>
 
-            <div class="projects-box">
-                <div class="projects-card">
-                    <img src="img/projeto1.png" alt="">
-                    <h3>Scanner de diretórios</h3>
-                    <p>
-                        Um script feito em python, que scanneia por diretórios em uma aplicação web.
-                    </p>
-                    <div class="btn"><a href="https://github.com/ItsMeYoshiro/DirSearch">Veja o projeto</a></div>
-                </div>
-                <div class="projects-card">
-                    <img src="img/projeto2.png" alt="">
-                    <h3>Scanner de portas</h3>
-                    <p>
-                        Um script feito em ruby, que scanneia por portas abertas ou fechadas em um host.
-                    </p>
-                    <div class="btn"><a href="https://github.com/ItsMeYoshiro/RubyPortScanner">Veja o projeto</a></div>
-                </div>
-                <div class="projects-card">
-                    <img src="img/projeto3.png" alt="">
-                    <h3>Blog</h3>
-                    <p>
-                        Blog em que posto conteúdo sobre tecnologia, programação, cibersegurança e muito mais. 
-                    </p>
-                    <div class="btn"><a href="https://itsmeyoshiro.github.io/">Veja o projeto</a></div>
-                </div>
             </div>
-        </section>
+            <section class="hero">
+                  <div class="hero-info">
+                        <div class="hero-info-title">
+                              <i class='bx bxl-sketch'></i>
+                              CyberSec Analyst - Blue Team
+                        </div>
+                        <h1>Protegendo o <span class="gradient">mundo </span> de <spanclass="gradient">ameaças cibernéticas.</span></h1>
+                        <p>Atuando nas defesas de infraestruturas de TI, prevenindo, detectando e mitigando agentes de ameaças.</p>
+                        <button> <i class='bx bx-send'></i> Visite meu blog!</button>
+                  </div>
+                  <div class="hero-vid-box">
+                        <video src="videos/hero-video.mp4" type="video/mp4" autoplay loop muted
+                              plays-inline></video>
+                  </div>
+                  <div class="scroll-down">
+                  </div>
 
-        <section class="contact" id="contact">
-            <h1>Contato</h1>
-            <div class="contact-info">
-                <img src="img/email.png" alt="">
-                <p><a href="mailto:kaioedu388@gmail.com">kaioedu388@gmail.com</a></p>
-            </div>
-        </section>
+            </section>
+            <section class="info-section" id="about" autoDisplay>
+                  <h1 autoDisplay class="section-title autoDisplay">Bem-vindo(a)!</h1>
+                  <div class="info-cards">
+                        <div class="card">
+                              <h1>Olá, Me chamo Kaio!</h1>
+                              <p>Sou graduando de defesa cibernética e player do TryHackMe.
+                              </p>
+                        </div>
+                        <div class="card">
+                              <h1>Habilidades técnicas</h1>
+                              <p>Através da minha experiência em plataformas de CTF e acadêmica, tive a oportunidade de explorar uma ampla variedade de ferramentas voltadas à segurança da 
+                              informação e até mesmo soluções de Pentest.</p>
+                              <img src="images/grid2.jpg" alt="card-image">
+                        </div>
+                        <div class="card">
+                              <h1>Flexivel com horários</h1>
+                              <p>A segurança de sistemas nunca descansa!</p>
+                              <video loop autoplay muted plays-inline src="videos/glob.mp4" type="video/mp4"></video>
+                              <button><a href="https://www.linkedin.com/in/kaiobarbosa/"><i class='bx bx-link-external'></i> Me contate!</a></button>
+                        </div>
+                        <div class="card">
+                              <h1>Minha paixão por cibersegurança</h1>
+                              <p>Proteger sistemas e entender a mente por trás dos ataques é o que me desafia e me inspira todos os dias.</p>         
+                              <img src="images/grid4.png" alt="card-image">
+                        </div>
+                  </div>
+            </section>
+            <section id="projects" class="my-projects" autoDisplay>
+                  <h1 class="section-title autoDisplay">Meus Projetos</h1>
+                  <div class="project-card">
+                        <div class="project-vidbox">
+                              <video id="projectVideo1" src="videos/project1.mp4" type="video/mp4"></video>
+                        </div>
+                        <div class="project-info ">
+                              <h1>Blog de <span class="gradient">cibersegurança</span> </h1>
+                              <p>Espaço em que posto as resoluções dos mais variados CTF's.</p>
+                              <button><a href="https://itsmeyoshiro.github.io/"><i class='bx bx-link-external'></i> Veja o projeto</a></button>
+                        </div>
+                  </div>
+                  <div class="project-card">
+                        <div class="project-vidbox">
+                              <video id="projectVideo2" src="videos/project2.mp4" type="video/mp4"></video>
+                        </div>
+                        <div class="project-info ">
+                              <h1>Crack <span class="gradient">Password</span></h1>
+                              <p>Cracker de senhas utilizando Shell.
+                                    Algoritmos aceitos: base64, md5, shal, sha256, sha512.</p>
+                              <button><a href="https://github.com/ItsMeYoshiro/Crack-Password"><i class='bx bx-link-external'></i> Veja o projeto</a></button>
+                        </div>
+                  </div>
+                  <div class="project-card">
+                        <div class="project-vidbox">
+                              <video id="projectVideo3" src="videos/project3.mp4" type="video/mp4"></video>
+                        </div>
+                        <div class="project-info ">
+                              <h1>Busca por <span class="gradient">subdomínio</span></h1>
+                              <p>Projeto em Python para um scanner de diretórios em aplicativos web. O scanner utiliza uma lista de palavras-chave (wordlist) para tentar identificar diretórios existentes em uma URL alvo.</p>
+                              <button><a href="https://github.com/ItsMeYoshiro/DirSearch"><i class='bx bx-link-external'></i> Veja o projeto</a></button>
+                        </div>
+                  </div>
+            </section>
+            <section id="skills" class="skills-section" autoDisplay>
+                  <h1 class="section-title autoDisplay">Minhas Habilidades</h1>
+                  <div class="skills-box">
+                        <img class="skills-image" src="images/digital brain.png" alt="skills-image">
+                        <div class="designer autoDisplay">
+                              <h1 class="gradient">Soc / Noc <i class='bx bx-laptop'></i></h1>
+                              <p>O NOC e o SOC são os pilares da resiliência digital. Enquanto o NOC garante a continuidade e a performance da infraestrutura, o SOC protege tudo isso contra ameaças invisíveis. Juntos, eles formam uma linha de defesa essencial, e é nessa missão de manter tudo funcionando e seguro que encontro meu propósito todos os dias.</p>
+                        </div>
+                        <div class="coder autoDisplay">
+                              <h1 class="gradient">Threat Intelligence <i class='bx bx-code'></i></h1>
+                              <p>Threat Intelligence é a arte de transformar dados em previsões, ameaças em estratégias e incertezas em decisões. É estar sempre um passo à frente, com olhos atentos ao invisível e mente afiada para o imprevisível.</p>
+                        </div>
+                        <!-- <div class="slider" reverse="true" style='--width: 100px;--height: 100px;--quantity: 9;'>
+                              <div class="list">
+                                    <div class="item" style="--position:1">
+                                          <img src="images/1.png" alt="slider-image">
 
-        <script src="js/main.js"></script> 
-    </body>
+                                    </div>
+                                    <div class="item" style="--position:2">
+                                          <img src="images/2.png" alt="slider-image">
+
+                                    </div>
+                                    <div class="item" style="--position:3">
+                                          <img src="images/3.png" alt="slider-image">
+                                    </div>
+                                    <div class="item" style="--position:4">
+                                          <img src="images/4.png" alt="slider-image">
+                                    </div>
+                                    <div class="item" style="--position:5">
+                                          <img src="images/5.png" alt="slider-image">
+                                    </div>
+                                    <div class="item" style="--position:6">
+                                          <img src="images/6.png" alt="slider-image">
+                                    </div>
+                                    <div class="item" style="--position:7">
+                                          <img src="images/7.png" alt="slider-image">
+                                    </div>
+                                    <div class="item" style="--position:8">
+                                          <img src="images/8.png" alt="slider-image">
+                                    </div>
+                                    <div class="item" style="--position:9">
+                                          <img src="images/9.png" alt="slider-image">
+                                    </div>
+                              </div>
+
+                        </div>
+                        -->
+                  </div>
+            </section>
+
+            <section class="contact-section" autoDisplay>
+                  <h1 class="section-title autoDisplay">Vamos conversar!</h1>
+                  <div class="social-box">
+                        <a href=""><i class='bx bx-mail-send'></i>kaioedu388@gmail.com </a>
+                        <a href=""><i class='bx bx-map'></i>Paraíba-Brazil</a>
+
+                        <div class="social-icons ">
+                              <a href="https://www.linkedin.com/in/kaiobarbosa/"><i class='bx bxl-linkedin-square'></i></a>
+                        </div>
+                  </div>
+
+            </section>
+            <footer class="footer">
+                  <p>&copy;All rights reserved</p>
+            </footer>
+            <script src="script.js"> </script>
+</body>
+
 </html>
-
-<!-- KBQXEYLC5FXHGIJAKZXWH2RAMNUGKZ3POUQGC4LVNEQGKIDTMVUSA4LVMUQHGZJAMVZWM33S45XXKIDQMFZGCIDDNBSWOYLSEBQXC5LJEEQFIZJAMFWW6IDNOVUXI3ZAMUQGK43QMVZG6IDROVSSA3TPONZW6IDSMVWGCY3JN5XGC3LFNZ2G6IDTMVVGCIDEOVZGCZDPOVZG6II=  -->
