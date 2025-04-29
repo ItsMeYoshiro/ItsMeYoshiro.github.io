@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Projekt Yoshiro</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2025-04-21T13:54:35-03:00</updated>
+  <updated>2025-04-29T16:24:36-03:00</updated>
   <author>
     <name>Yoshiro</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,42 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>TryHackMe - Soc Level 1</title>
+    <link href="http://localhost:4000/posts/TryHackMe-Soc-Level-1/" rel="alternate" type="text/html" title="TryHackMe - Soc Level 1" />
+    <published>2025-04-25T07:00:12-03:00</published>
+  
+    <updated>2025-04-25T07:00:12-03:00</updated>
+  
+    <id>http://localhost:4000/posts/TryHackMe-Soc-Level-1/</id>
+    <content src="http://localhost:4000/posts/TryHackMe-Soc-Level-1/" />
+    <author>
+      <name>Yoshiro</name>
+    </author>
+
+  
+    
+    <category term="TryHackMe" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Contexto
+
+Essa sala tem como objetivo preparar analistas SOC de nível 1 abordando cenários em que os analistas L1 enfrentam ataques reais que exigem resposta imediata e ações de remediação. Para isso, a sala introduz três conceitos fundamentais: relato de alertas (alert reporting), escalonamento (escalation) e comunicação (communication). Nela, vamos aprender a importância do relato e do escalo...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -173,54 +209,6 @@ Após um recente relatório de violação de dados na empresa, o cliente enviou 
 Contexto
 
 A prova de estágio da Tempest ocorreu até o dia 28/07 e uma das partes dela era necessário resolver um “mini CTF”, em que, uma empresa denominada Quantum Nexys sofreu um ataque de Ransomware e procurou um time especializado para tentar reaver os dados de contratos, clientes e parceiros que foram roubados de seu servidor principal. Mas um arquivo em específico...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>HTB Máquinas - Mailing</title>
-    <link href="http://localhost:4000/posts/HTB-Mailing/" rel="alternate" type="text/html" title="HTB Máquinas - Mailing" />
-    <published>2024-05-06T04:50:12-03:00</published>
-  
-    <updated>2024-05-06T04:50:12-03:00</updated>
-  
-    <id>http://localhost:4000/posts/HTB-Mailing/</id>
-    <content src="http://localhost:4000/posts/HTB-Mailing/" />
-    <author>
-      <name>Yoshiro</name>
-    </author>
-
-  
-    
-    <category term="HTB" />
-    
-    <category term="Máquinas" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Mailing
-
-Enumeração
-
-┌──(yoshiro㉿kali)-[~]
-└─$ nmap -sV -A 10.10.11.14    
-Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-05-06 08:22 -03
-Nmap scan report for mailing.htb (10.10.11.14)
-Host is up (0.35s latency).
-Not shown: 990 filtered tcp ports (no-response)
-PORT    STATE SERVICE       VERSION
-25/tcp  open  smtp          hMailServer smtpd
-| smtp-commands: mailing.htb, SIZE 20480000, AUTH ...
     </summary>
   
 

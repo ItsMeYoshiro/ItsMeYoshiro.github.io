@@ -38,6 +38,7 @@
 <meta property="og:url" content="http://localhost:4000/" />
 <meta property="og:site_name" content="Projekt Yoshiro" />
 <meta property="og:type" content="website" />
+<link rel="next" href="http://localhost:4000/page2" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Projekt Yoshiro" />
 <script type="application/ld+json">
@@ -443,6 +444,71 @@
 
 
 <div id="post-list" class="flex-grow-1 px-xl-1">
+  
+    <article class="card-wrapper card">
+      <a href="/posts/TryHackMe-Soc-Level-1/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">TryHackMe - Soc Level 1</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
+
+
+
+
+
+                Contexto
+
+Essa sala tem como objetivo preparar analistas SOC de nível 1 abordando cenários em que os analistas L1 enfrentam ataques reais que exigem resposta imediata e ações de remediação. Para is...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1745575212"
+  data-df="ll"
+  
+>
+  Apr 25, 2025
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      TryHackMe
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
   
     <article class="card-wrapper card">
       <a href="/posts/Tempest-Prova-de-Est%C3%A1gio-2/" class="post-preview row g-0 flex-md-row-reverse">
@@ -1057,80 +1123,82 @@ Primeiramente, iremos iniciar com o NMAP que é uma ferramenta desenvolvida para
       </a>
     </article>
   
-    <article class="card-wrapper card">
-      <a href="/posts/HTB-Hospital/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">HTB Máquinas - Hospital</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                Hospital
-
-Enumeração
-
-Como sempre, iremos iniciar o pentesting usando o NMAP para verificar quais portas a aplicação usa. Irei verificar primeiramente com um comando simples.
-
-nmap 10.10.11.241 
-
-S...
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1712836032"
-  data-df="ll"
-  
->
-  Apr 11, 2024
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      HTB,
-                      Máquinas
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
 </div>
 <!-- #post-list -->
+
+
+  <!-- The paginator for post list on HomgPage. -->
+
+<nav aria-label="Page Navigation">
+  <ul class="pagination align-items-center mt-4 mb-0">
+    <!-- left arrow -->
+    
+
+    <li class="page-item disabled">
+      <a class="page-link" href="#" aria-label="previous-page">
+        <i class="fas fa-angle-left"></i>
+      </a>
+    </li>
+
+    <!-- page numbers -->
+    
+    
+
+    
+      
+      
+      
+      
+      
+
+      
+
+      
+        <!-- show number -->
+        <li class="page-item  active">
+          <a
+            class="page-link"
+            href="/"
+          >1</a>
+        </li>
+      
+    
+      
+      
+      
+      
+      
+
+      
+
+      
+        <!-- show number -->
+        <li class="page-item ">
+          <a
+            class="page-link"
+            href="/page2"
+          >2</a>
+        </li>
+      
+    
+
+    <!-- mobile pagination -->
+    <li class="page-index align-middle">
+      <span>1</span>
+      <span class="text-muted">/ 2</span>
+    </li>
+
+    <!-- right arrow -->
+    
+
+    <li class="page-item ">
+      <a class="page-link" href="/page2" aria-label="next-page">
+        <i class="fas fa-angle-right"></i>
+      </a>
+    </li>
+  </ul>
+</nav>
+<!-- .pagination -->
 
 
 
@@ -1164,6 +1232,13 @@ S...
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/TryHackMe-Soc-Level-1/">TryHackMe - Soc Level 1</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/Tempest-Prova-de-Est%C3%A1gio-2/">Prova de estágio Tempest 2</a>
         </li>
       
@@ -1186,13 +1261,6 @@ S...
         
         <li class="text-truncate lh-lg">
           <a href="/posts/Prova-Tempest/">Prova de estágio Tempest</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/HTB-Mailing/">HTB Máquinas - Mailing</a>
         </li>
       
     </ul>
@@ -1226,39 +1294,6 @@ S...
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1293,6 +1328,79 @@ S...
     
     
     
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
     
   
@@ -1325,6 +1433,54 @@ S...
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
   
     
     
@@ -1339,6 +1495,68 @@ S...
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -1368,10 +1586,19 @@ S...
         <a class="post-tag btn btn-outline-primary" href="/tags/tempest/">tempest</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/blue-team/">blue team</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/easy/">easy</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/hard/">hard</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/thm/">THM</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/tryhackme/">tryhackme</a>
       
     </div>
   </section>
@@ -1451,39 +1678,6 @@ S...
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1518,6 +1712,79 @@ S...
     
     
     
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
     
   
@@ -1550,6 +1817,54 @@ S...
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
   
     
     
@@ -1564,6 +1879,68 @@ S...
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -1593,10 +1970,19 @@ S...
         <a class="post-tag btn btn-outline-primary" href="/tags/tempest/">tempest</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/blue-team/">blue team</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/easy/">easy</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/hard/">hard</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/thm/">THM</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/tryhackme/">tryhackme</a>
       
     </div>
   </section>
