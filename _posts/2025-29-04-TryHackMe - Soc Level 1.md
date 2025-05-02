@@ -1,8 +1,8 @@
 ---
 title: TryHackMe - Soc Level 1
 date: 2025-04-25 13:00:12 +0300
-categories: [TryHackMe]
-tags: [tryhackme, blue team, easy]     # TAG names should always be lowercase
+categories: []
+tags: []     # TAG names should always be lowercase
 ---
 ## Contexto
 
@@ -79,7 +79,7 @@ Verificando o alerta do e-mail de phishing, podemos analisar os 5 porquês, send
 
 -Microsoft Support: support@microsoft.com. Apesar de parecer legítimo, é um endereço falsificado (spoofed).
 
--Eddie Huffman, IT Manager [e.huffman@tryhackme.thm](). Alvo com acesso privilegiado.
+-Eddie Huffman, IT Manager e.huffman@tryhackme.thm. Alvo com acesso privilegiado.
 
 **2 - O quê?**
 
