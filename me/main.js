@@ -126,3 +126,9 @@ function runCommand(cmd) {
 
   commands[base].forEach(line => print(line, "output"));
 }
+
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    texter.focus();
+  }, 300);
+});

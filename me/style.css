@@ -3,11 +3,11 @@ body {
   padding: 15px 20px;
   min-height: 99%;
   width: 100%;
-  min-width: 550px;
   color: #519975;
   background: #211D1B;
   font-family: monospace;
   overflow-x: hidden;
+  min-width: unset;
 }
 
 ::selection {
@@ -16,8 +16,9 @@ body {
 }
 
 textarea {
-  position: absolute;
-  left: -1000px;
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .cursor {
@@ -60,25 +61,23 @@ pre.ascii {
 }
 
 @media (max-width: 768px) {
-  body {
-    min-width: 100%;
-    padding: 12px;
+   body {
     font-size: 14px;
   }
 
   p {
-    white-space: normal; 
+    white-space: normal;
     word-break: break-word;
   }
 
-  #liner::before {
-    content: "visitante@kaiobarbosa:$ ";
+  #command {
+    position: relative;
   }
 
-  .cursor {
-    height: 1.2em;
-    width: 8px;
-    transform: translateY(2px);
+  textarea {
+    position: fixed;
+    bottom: 0;
+    left: 0;
   }
 }
 
