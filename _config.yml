@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "pt"
 site_theme               : "mint" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
-title                    : "CyberSec Blog - Kaio Barbosa"
+title                    : "CyberSec Blog-Kaio Barbosa"
 title_separator          : "-"
 name                     : &name "Kaio Barbosa"
 description              : &description "Blog pessoal de cibersegurança."   # Update this with a general description of your site, this is the default if not overridden by a page
